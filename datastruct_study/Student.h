@@ -5,7 +5,7 @@
 
 
 
-//结构体
+//单链表结构体
 
 struct Student {
 
@@ -15,6 +15,20 @@ struct Student {
 
 	struct Student * next;
 
+};
+
+//双链表结构体
+
+struct DStudent {
+
+	int num;
+
+	float score;
+
+	//后继节点
+	struct DStudent * next;
+	//前驱节点
+	struct DStudent * prior;
 };
 
 #endif

@@ -41,6 +41,9 @@
     <ClCompile Include="2_2.cpp">
       <Filter>源文件\chapter2</Filter>
     </ClCompile>
+    <ClCompile Include="DoubleLinkedListCreate.cpp">
+      <Filter>源文件\chapter2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="1_1.txt">
