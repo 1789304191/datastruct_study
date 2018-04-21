@@ -148,11 +148,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Student.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1_0.cpp" />
     <ClCompile Include="2_1.c" />
+    <ClCompile Include="2_2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="1_1.txt" />

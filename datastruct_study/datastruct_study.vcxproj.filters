@@ -27,12 +27,18 @@
     <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Student.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1_0.cpp">
       <Filter>源文件\chapter1</Filter>
     </ClCompile>
     <ClCompile Include="2_1.c">
+      <Filter>源文件\chapter2</Filter>
+    </ClCompile>
+    <ClCompile Include="2_2.cpp">
       <Filter>源文件\chapter2</Filter>
     </ClCompile>
   </ItemGroup>
