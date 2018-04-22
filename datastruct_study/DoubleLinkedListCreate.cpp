@@ -1,9 +1,8 @@
 #include <iostream>
 #include "Student.h"
 
-#define LEN sizeof(struct DStudent)
 
-typedef struct DStudent DStudent;
+
 
 //int main() {
 //	void createDouLinedList(DStudent *&p, int n);
@@ -35,13 +34,13 @@ void createDouLinedList(DStudent *&p,int n) {
 	DStudent * start=NULL;
 	DStudent * head;
 	//先创建一个头节点
-	p = (DStudent *)malloc(LEN);
+	p = (DStudent *)malloc(LENDS);
 	//start为头节点
 	head = p;
 	p->prior = NULL;
 	p->next = NULL;
 	for (int i = 0; i < n; i++) {
-		start=(DStudent *)malloc(LEN);
+		start=(DStudent *)malloc(LENDS);
 		scanf_s("%d,%f", &start->num, &start->score);
 		p->next = start;
 		start->prior = p;
@@ -94,7 +93,7 @@ DStudent * insert_d(DStudent *p0, DStudent *p1) {
 
 //双链表单节点的创建
 DStudent * create_one_d() {
-	DStudent * p = (DStudent *)malloc(LEN);
+	DStudent * p = (DStudent *)malloc(LENDS);
 	scanf_s("%d,%f", &p->num, &p->score);
 	p->next = NULL;
 	p->prior = NULL;

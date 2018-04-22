@@ -50,6 +50,9 @@
     <ClCompile Include="Common.cpp">
       <Filter>源文件\chapter2</Filter>
     </ClCompile>
+    <ClCompile Include="ExampleTwo.cpp">
+      <Filter>源文件\chapter2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="1_1.txt">
