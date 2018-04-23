@@ -3,10 +3,6 @@
 
 #define _STUDENT_H_
 
-typedef struct DStudent DStudent;
-
-typedef struct Student Student;
-
 
 #define LENDS sizeof(struct DStudent)
 
@@ -15,7 +11,7 @@ typedef struct Student Student;
 
 //单链表结构体
 
-struct Student {
+typedef struct Student {
 
 	int num;
 
@@ -23,11 +19,11 @@ struct Student {
 
 	struct Student * next;
 
-};
+}Student;
 
 //双链表结构体
 
-struct DStudent {
+typedef struct DStudent {
 
 	int num;
 
@@ -37,7 +33,7 @@ struct DStudent {
 	struct DStudent * next;
 	//前驱节点
 	struct DStudent * prior;
-};
+}DStudent;
 
 /*
 数组的打印定义
@@ -70,6 +66,6 @@ void merge(struct Student * a, struct Student * b, struct Student *&c);
 struct Student * createWithHead();
 
 //带头节点链表插入排序（从小到大）
-struct Student * insertionSortByAscWithHead(struct Student * head);
+void insertionSortByAscWithHead(Student * head);
 
 #endif

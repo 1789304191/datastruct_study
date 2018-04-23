@@ -208,23 +208,38 @@ struct Student * createWithHead() {
 
 
 //带头节点链表插入排序（从小到大）
-Student * insertionSortByAscWithHead(Student * head) {
+void insertionSortByAscWithHead(Student * head) {
 
 	Student * p;
-	Student * p0=NULL;
-	Student * p1;
-	Student * p2;
+	//第一个节点
 	p = head->next;
+	//保留头节点
 	head->next = NULL;
-	while (p != NULL) {
-		if (head->next = NULL) {
-			p0 = p;
-			head->next = p0;
-			p0->next = NULL;
+
+	Student * p0;
+	Student * p1;
+	Student * p2 = NULL;
+	//头节点之后的第一个节点
+	Student * p3 = p;
+	//第二个节点
+	p1= p0 = p->next;
+	p->next = NULL;
+	while (p1 != NULL) {
+		p1 = p1->next;
+		while (p != NULL && p0->num > p->num) {
+			p2 = p;
 			p = p->next;
-			continue;
 		}
-		
+		if (p == p3) {
+			p3 = p0;
+			p0->next = p;
+		}
+		else {
+			p0->next = p2->next;
+			p2->next = p0;
+		}
+		p = p3;
+		p0 = p1;
 	}
-	
+	head->next = p3;
 }
