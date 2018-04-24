@@ -68,4 +68,7 @@ struct Student * createWithHead();
 //带头节点链表插入排序（从小到大）
 void insertionSortByAscWithHead(Student * head);
 
+//带头节点单链表去重
+void distinct(Student * a, Student * b);
+
 #endif

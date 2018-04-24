@@ -243,3 +243,37 @@ void insertionSortByAscWithHead(Student * head) {
 	}
 	head->next = p3;
 }
+
+//带头节点单链表去重
+void distinct(Student * a, Student * b) {
+
+	Student * p1 = a->next;
+
+	Student * p2 = b->next;
+
+	Student * pre = a;
+
+	Student * r;
+
+	while (p1 != NULL && p2 != NULL) {
+
+		if (p1->num > p2->num) {
+			p2 = p2->next;
+		}
+		else if(p1->num<p2->num){
+			//如果p1.next等与p2则保存p1节点，为了去掉p1.next节点
+			pre = p1;
+			p1 = p1->next;
+		}
+		else {
+			pre->next = p1->next;
+			r = p1;
+			p1 = p1->next;
+			free(r);
+		}
+	
+	
+	}
+
+
+}
