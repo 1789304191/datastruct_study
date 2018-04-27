@@ -19,6 +19,9 @@
     <Filter Include="源文件\chapter1">
       <UniqueIdentifier>{c17ccf08-91a8-4cd2-98c9-f0ac356666c4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\chapter3">
+      <UniqueIdentifier>{679396ce-7f45-4553-9785-a48a3e90a572}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -28,6 +31,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Student.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StackAndQueue.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -52,6 +58,12 @@
     </ClCompile>
     <ClCompile Include="ExampleTwo.cpp">
       <Filter>源文件\chapter2</Filter>
+    </ClCompile>
+    <ClCompile Include="StackQueueCommon.cpp">
+      <Filter>源文件\chapter3</Filter>
+    </ClCompile>
+    <ClCompile Include="StackTestOne.cpp">
+      <Filter>源文件\chapter3</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
