@@ -65,6 +65,9 @@
     <ClCompile Include="StackTestOne.cpp">
       <Filter>源文件\chapter3</Filter>
     </ClCompile>
+    <ClCompile Include="StackTestTwo.cpp">
+      <Filter>源文件\chapter3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="1_1.txt">

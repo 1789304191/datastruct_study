@@ -162,6 +162,7 @@
     <ClCompile Include="ExampleTwo.cpp" />
     <ClCompile Include="StackTestOne.cpp" />
     <ClCompile Include="StackQueueCommon.cpp" />
+    <ClCompile Include="StackTestTwo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="1_1.txt" />
