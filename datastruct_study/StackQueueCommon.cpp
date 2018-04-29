@@ -35,12 +35,17 @@ int match(char exp[], int n) {
 
 //运算函数
 int op(int a, char op, int b) {
-	if (op == '+') return a + b;
-	if (op == '-') return a - b;
-	if (op == '*') return a * b;
-	if (op == '/') {
+	if (op == '+') {
+		return a + b;
+	}
+	else if (op == '-') {
+		return a - b;
+	}
+	else if (op == '*') {
+		return a * b;
+	}else {
 		if (b == 0) {
-			printf("Error");
+			return ERROR;
 		}
 		else {
 			return a / b;
@@ -75,3 +80,45 @@ int com(char exp[]) {
 	}
 	return stack[top];
 }
+
+
+//不带头节点的链栈的初始化
+void initLinkedStack(Student *&students) {
+	students = NULL;
+	printf("\n链栈初始化成功。。。\n");
+}
+
+//判断头节点的链栈判断是否是空链
+int isEmptyLinkedStack(Student * student) {
+	if (student == NULL) {
+		return TRUE;
+	}
+	else {
+		return FALSE;
+	}
+}
+
+//不带头节点的链栈进栈实现(需要改变值&)
+void pushForLinkedStack(Student *&students, Student *p)
+{
+	p->next = students;
+	students = p;
+}
+
+//不带头节点的链栈出栈实现
+void popForLinkedStack(Student *&students) {
+	Student * p;
+	p = students->next;
+	students->next = NULL;
+	free(students);
+	students = p;
+	/*
+		或者
+		p=students
+		students=p->next;
+		free(p);
+	*/
+}
+
+
+
