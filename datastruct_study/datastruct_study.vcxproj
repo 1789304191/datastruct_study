@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="StackAndQueue.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="str.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -160,10 +161,16 @@
     <ClCompile Include="DoubleLinkedListCreate.cpp" />
     <ClCompile Include="ExampleOne.cpp" />
     <ClCompile Include="ExampleTwo.cpp" />
+    <ClCompile Include="StackTestFour.cpp" />
     <ClCompile Include="StackTestOne.cpp" />
     <ClCompile Include="StackQueueCommon.cpp" />
     <ClCompile Include="StackTestThree.cpp" />
     <ClCompile Include="StackTestTwo.cpp" />
+    <ClCompile Include="StringAssign.cpp" />
+    <ClCompile Include="StringCompare.cpp" />
+    <ClCompile Include="StringConnect.cpp" />
+    <ClCompile Include="StringUtils.cpp" />
+    <ClCompile Include="SubString.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="1_1.txt" />

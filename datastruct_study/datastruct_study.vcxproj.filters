@@ -22,6 +22,9 @@
     <Filter Include="源文件\chapter3">
       <UniqueIdentifier>{679396ce-7f45-4553-9785-a48a3e90a572}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\chapter4">
+      <UniqueIdentifier>{fdb6fd6a-389c-4ae2-bf6c-b94a17915675}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -34,6 +37,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="StackAndQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="str.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -70,6 +76,24 @@
     </ClCompile>
     <ClCompile Include="StackTestThree.cpp">
       <Filter>源文件\chapter3</Filter>
+    </ClCompile>
+    <ClCompile Include="StackTestFour.cpp">
+      <Filter>源文件\chapter3</Filter>
+    </ClCompile>
+    <ClCompile Include="StringUtils.cpp">
+      <Filter>源文件\chapter4</Filter>
+    </ClCompile>
+    <ClCompile Include="StringAssign.cpp">
+      <Filter>源文件\chapter4</Filter>
+    </ClCompile>
+    <ClCompile Include="StringCompare.cpp">
+      <Filter>源文件\chapter4</Filter>
+    </ClCompile>
+    <ClCompile Include="StringConnect.cpp">
+      <Filter>源文件\chapter4</Filter>
+    </ClCompile>
+    <ClCompile Include="SubString.cpp">
+      <Filter>源文件\chapter4</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

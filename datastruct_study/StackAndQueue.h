@@ -12,6 +12,12 @@
 
 #define ERROR 2
 
+//两个顺序栈共享同一块存储区的结构体设计
+typedef struct {
+	int elem[MAXSIZE];
+	int top[2];
+}SqStack;
+
 //判断一个表达式中的小括号是否正确
 int match(char exp[], int n);
 
@@ -32,5 +38,14 @@ void pushForLinkedStack(Student *&students,Student *p);
 
 //不带头节点的链栈出栈实现
 void popForLinkedStack(Student *&students);
+
+//两个顺序栈共享同一块存储区的入栈操作 stNo表示入哪一个栈
+int push(SqStack &st,int stNo,int x);
+
+//两个顺序栈共享同一块存储区的出栈操作 stNo表示入哪一个栈 x表示接受的出栈元素
+int pop(SqStack &st, int stNo, int &x);
+
+//两个顺序栈共享同一块存储区的初始化
+void init(SqStack &st);
 
 #endif

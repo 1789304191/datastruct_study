@@ -120,5 +120,63 @@ void popForLinkedStack(Student *&students) {
 	*/
 }
 
+//两个顺序栈共享同一块存储区的入栈操作 stNo表示入哪一个栈
+int push(SqStack &st, int stNo, int x) {
+	//栈不满才能入栈
+	if (st.top[0] != st.top[1]) {
+		//入栈1
+		if (stNo == 0) {
+			st.elem[++st.top[0]] = x;
+			return TRUE;
+		}
+		else if (stNo == 1) {
+			st.elem[--st.top[1]] = x;
+			return TRUE;
+		}
+		else
+		{
+			return FALSE;
+		}
+	}
+	else {
+		return FALSE;
+	}
+
+}
+
+//两个顺序栈共享同一块存储区的出栈操作 stNo表示入哪一个栈 x表示接受的出栈元素
+int pop(SqStack &st, int stNo, int &x) {
+	//判断是否是空栈
+	if (stNo == 0) {
+		if (st.top[0] == -1) {
+			return FALSE;
+		}
+		else {
+			x = st.elem[st.top[0]--];
+			return TRUE;
+		}
+	}
+	else if (stNo == 1){
+		//这里不能等于maxsize-1因为maxsize-1还可以放入值
+		if (st.top[1] == MAXSIZE) {
+			return FALSE;
+		}
+		else {
+			x = st.elem[st.top[1]++];
+			return TRUE;
+		}
+	}
+	else {
+		return FALSE;
+	}
+
+}
+
+//两个顺序栈共享同一块存储区的初始化
+void init(SqStack &st) {
+	st=*((SqStack *)malloc(sizeof(SqStack)));
+	st.top[0] = -1;
+	st.top[1] = MAXSIZE;
+}
 
 
