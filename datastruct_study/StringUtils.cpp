@@ -6,7 +6,7 @@ void init(String &str) {
 	str=*(String *)malloc(sizeof(String));
 	str.ch = NULL;
 	str.length = 0;
-	printf("字符串初始化成功。。。。。。");
+	printf("\n字符串初始化成功。。。。。。");
 }
 
 //字符串初始化并赋值
@@ -108,4 +108,50 @@ int subString(String &str, String s2, int start, int end) {
 	}
 	str.ch[str.length + 1] = '\0';
 	return 1;
+}
+
+//字符串匹配
+int index(String str, String subStr) {
+	//记录匹配成功的开始位置
+	int k;
+	//父串的长度
+	int i = 0;
+	//子串的长度
+	int j = 0;
+	k = i;
+	while (i < str.length && j<subStr.length) {
+		if (str.ch[i] == subStr.ch[j]) {
+			i++;
+			j++;
+			continue;
+		}
+		else {
+			k++;
+			i = k;
+			j = 0;
+		}
+	}
+
+	if (j == subStr.length ) {
+		return k;
+	}
+	else {
+		return -1;
+	}
+}
+
+//next数组
+void getNext(String str, int next[]) {
+	int i = 1,j = 0;
+	next[1] = 0;
+	while (i < str.length) {
+		if (j == 0 || str.ch[i] == str.ch[j]) {
+			++i;
+			++j;
+			next[i] = j;
+		}
+		else {
+			j = next[j];
+		}
+	}
 }

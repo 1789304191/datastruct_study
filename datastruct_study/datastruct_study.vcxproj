@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="print.h" />
     <ClInclude Include="StackAndQueue.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="str.h" />
@@ -161,6 +162,8 @@
     <ClCompile Include="DoubleLinkedListCreate.cpp" />
     <ClCompile Include="ExampleOne.cpp" />
     <ClCompile Include="ExampleTwo.cpp" />
+    <ClCompile Include="NextFuction.cpp" />
+    <ClCompile Include="print.cpp" />
     <ClCompile Include="StackTestFour.cpp" />
     <ClCompile Include="StackTestOne.cpp" />
     <ClCompile Include="StackQueueCommon.cpp" />
@@ -169,6 +172,7 @@
     <ClCompile Include="StringAssign.cpp" />
     <ClCompile Include="StringCompare.cpp" />
     <ClCompile Include="StringConnect.cpp" />
+    <ClCompile Include="StringMatch.cpp" />
     <ClCompile Include="StringUtils.cpp" />
     <ClCompile Include="SubString.cpp" />
   </ItemGroup>

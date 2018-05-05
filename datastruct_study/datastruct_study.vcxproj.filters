@@ -42,6 +42,9 @@
     <ClInclude Include="str.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="print.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1_0.cpp">
@@ -93,6 +96,15 @@
       <Filter>源文件\chapter4</Filter>
     </ClCompile>
     <ClCompile Include="SubString.cpp">
+      <Filter>源文件\chapter4</Filter>
+    </ClCompile>
+    <ClCompile Include="StringMatch.cpp">
+      <Filter>源文件\chapter4</Filter>
+    </ClCompile>
+    <ClCompile Include="print.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NextFuction.cpp">
       <Filter>源文件\chapter4</Filter>
     </ClCompile>
   </ItemGroup>

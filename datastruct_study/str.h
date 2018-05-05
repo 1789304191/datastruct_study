@@ -29,4 +29,9 @@ int connect(String &s1, String s2, String s3);
 //×Ö·û´®µÄ½ØÈ¡
 int subString(String &str, String s2, int start, int end);
 
+//×Ö·û´®Æ¥Åä
+int index(String str, String subStr);
+
+//nextÊı×é
+void getNext(String str, int next[]);
 #endif
