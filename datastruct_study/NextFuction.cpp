@@ -3,11 +3,12 @@
 #include "print.h"
 
 int main() {
-	char a[] = "abab";
+	//字符串长度为7所以next值有7个
+	char a[] = "ABABC";
 	String str = initAndAssignStr(a);
-	int b[5];
+	int b[8];
 	b[0] = -1;
 	getNext(str,b);
-	printArray(5,b);
+	printArray(8,b);
 	return 0;
 }

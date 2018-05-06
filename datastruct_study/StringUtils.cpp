@@ -145,12 +145,21 @@ void getNext(String str, int next[]) {
 	int i = 1,j = 0;
 	next[1] = 0;
 	while (i < str.length) {
-		if (j == 0 || str.ch[i] == str.ch[j]) {
-			++i;
-			++j;
-			next[i] = j;
+		/* 这里减1是因为字符串从1开始，不相等时说明差异时从i开始
+		则开始比较next值的元素
+		比如a="ABAB|C"
+			   ABAB|D
+			     AB|AB next[5]=next[4]+1=3
+		求next5时  此时发生差异的地方时C 此时i=4 
+		此时next[4]为2 j=2
+		因此比较a[1]和a[3],如果相等则next[5]=next[4]+1
+		*/
+		if (j == 0 || str.ch[i-1] == str.ch[j-1]) {
+
+			next[++i] = ++j;
 		}
 		else {
+			//next[j]为0表示模式串第一个字符与主串i不相等
 			j = next[j];
 		}
 	}
