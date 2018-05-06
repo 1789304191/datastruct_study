@@ -34,4 +34,8 @@ int index(String str, String subStr);
 
 //nextÊı×é
 void getNext(String str, int next[]);
+
+//kmpËã·¨
+int kmp(String str, String subStr, int next[]);
+
 #endif

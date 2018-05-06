@@ -162,6 +162,7 @@
     <ClCompile Include="DoubleLinkedListCreate.cpp" />
     <ClCompile Include="ExampleOne.cpp" />
     <ClCompile Include="ExampleTwo.cpp" />
+    <ClCompile Include="Kmp.cpp" />
     <ClCompile Include="NextFuction.cpp" />
     <ClCompile Include="print.cpp" />
     <ClCompile Include="StackTestFour.cpp" />

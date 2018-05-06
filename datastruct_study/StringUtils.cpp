@@ -164,3 +164,36 @@ void getNext(String str, int next[]) {
 		}
 	}
 }
+
+
+//kmp算法
+int kmp(String str, String subStr, int next[]) {
+	int i = 0, j = 0;
+	while (i < str.length && j < subStr.length) {
+		
+		if ( str.ch[i] == subStr.ch[j] ) {
+			i++;
+			j++;
+		}
+		else {
+			//下一个所比较的位置 +1是因为字符串从0开始 且next[0]时-1，next函数是
+			//从next[1]开始 入ab j=0时与主串不相等实际上是要求next[1]的值
+			j = next[j+1];
+			//如果等于1则字符串第一位与当前i相比
+			if (j == 1) {
+				j = 0;
+			}
+			//j等于0，则主串的下一个字符和子串第一个字符相比
+			else if (j == 0) {
+				i++;
+			}
+		}
+		
+	}
+	if (j == subStr.length) {
+		return i - subStr.length;
+	}
+	else {
+		return -1;
+	}
+}

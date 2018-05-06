@@ -107,6 +107,9 @@
     <ClCompile Include="NextFuction.cpp">
       <Filter>源文件\chapter4</Filter>
     </ClCompile>
+    <ClCompile Include="Kmp.cpp">
+      <Filter>源文件\chapter4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="1_1.txt">
