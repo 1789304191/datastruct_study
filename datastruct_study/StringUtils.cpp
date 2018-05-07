@@ -165,6 +165,45 @@ void getNext(String str, int next[]) {
 	}
 }
 
+//next函数优化版
+void getNextAdvance(String str, int next[]) {
+	int i = 1, j = 0;
+	next[1] = 0;
+	while (i < str.length) {
+		/* 这里减1是因为字符串从1开始，不相等时说明差异时从i开始
+		则开始比较next值的元素
+		比如a="ABAB|C"
+			   ABAB|D
+		         AB|AB next[5]=next[4]+1=3
+		求next5时  此时发生差异的地方时C 此时i=4
+		此时next[4]为2 j=2
+		因此比较a[1]和a[3],如果相等则next[5]=next[4]+1
+		i-1是因为当求next[5]时 i应该等于4 因为比的是 a[3]和a[1]
+		而此时next[j]=2实际上是字符串1的位置 因此需要j-1
+		*/
+		if (j == 0 || str.ch[i - 1] == str.ch[j - 1]) {
+			++i;
+			++j;
+			/*			1234567
+				对于	ABABAAB
+				next值：0112342
+				本来next[3]等于1，但是要判断一下3与1是否相等
+				即a[2]和next[3]=j (j需要减1，因为字符串从0开始)
+				如果相等则next[i]=next[j];
+			*/
+			if (str.ch[i - 1] == str.ch[j-1]) {
+				next[i] = next[j];
+			}
+			else {
+				next[i] = j;
+			}
+		}
+		else {
+			//next[j]为0表示模式串第一个字符与主串i不相等
+			j = next[j];
+		}
+	}
+}
 
 //kmp算法
 int kmp(String str, String subStr, int next[]) {

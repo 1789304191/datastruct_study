@@ -38,4 +38,7 @@ void getNext(String str, int next[]);
 //kmpËã·¨
 int kmp(String str, String subStr, int next[]);
 
+//nextËã¸Ä½ø
+void getNextAdvance(String str, int next[]);
+
 #endif
