@@ -25,6 +25,9 @@
     <Filter Include="源文件\chapter4">
       <UniqueIdentifier>{fdb6fd6a-389c-4ae2-bf6c-b94a17915675}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\chapter5">
+      <UniqueIdentifier>{d625b7bb-dbdd-4379-8fda-183145a7fd52}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -43,6 +46,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="print.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -109,6 +115,12 @@
     </ClCompile>
     <ClCompile Include="Kmp.cpp">
       <Filter>源文件\chapter4</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix.cpp">
+      <Filter>源文件\chapter5</Filter>
+    </ClCompile>
+    <ClCompile Include="MatrixCreateAndPrint.cpp">
+      <Filter>源文件\chapter5</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
