@@ -122,6 +122,9 @@
     <ClCompile Include="MatrixCreateAndPrint.cpp">
       <Filter>源文件\chapter5</Filter>
     </ClCompile>
+    <ClCompile Include="ArrayToCrossList.cpp">
+      <Filter>源文件\chapter5</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="1_1.txt">
