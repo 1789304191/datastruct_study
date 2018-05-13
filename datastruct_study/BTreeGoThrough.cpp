@@ -46,5 +46,26 @@ int main() {
 	p9->lchild = NULL;
 	p9->rchild = NULL;
 
-	printInt(comp(p1));
+	//1.后序遍历
+	//printInt(comp(p1));
+
+	//2.后续遍历求深度
+	//printInt(getDepth(p1));
+
+	//3.先序遍历查找
+	//BTNode * q = NULL;
+	//search(p1, q, '+');
+
+	//4.先序遍历输出指定节点的值
+	//searchBykeyIndexPre(p1,9);
+
+	//5.中序遍历输出指定节点的值
+	//searchBykeyIndexCenter(p1,6);
+
+	//6.层次遍历
+	//level(p1);
+
+	//7.根据层次遍历求宽度
+	//printInt(maxNode(p1));
+	return 0;
 }
