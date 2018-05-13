@@ -50,4 +50,16 @@ void level(BTNode *p);
 //求二叉树的宽度
 int maxNode(BTNode *p);
 
+//访问节点信息
+void visit(BTNode * p);
+
+//二叉树优化遍历的非递归实现（先序）
+void preOrderNonRecurision(BTNode * p);
+
+//二叉树优化遍历的非递归实现（中序）
+void inOrderNonRecurision(BTNode * p);
+
+//二叉树优化遍历的非递归实现（后序）
+void postOrderNonRecurision(BTNode * p);
+
 #endif

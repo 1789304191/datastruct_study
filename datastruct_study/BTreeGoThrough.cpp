@@ -67,5 +67,14 @@ int main() {
 
 	//7.根据层次遍历求宽度
 	//printInt(maxNode(p1));
+
+	//8.深度优化二叉树遍历，非递归实现，先序
+	//preOrderNonRecurision(p1);
+
+	//9.深度优化二叉树遍历，非递归实现，中序
+	//inOrderNonRecurision(p1);
+
+	//10.深度优化二叉树遍历，非递归实现，后续
+	postOrderNonRecurision(p1);
 	return 0;
 }
