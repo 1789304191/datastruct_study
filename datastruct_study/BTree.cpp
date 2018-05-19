@@ -432,7 +432,7 @@ TBTNode * Next(TBTNode *p) {
 		return p->rchild;
 	}
 	else {
-		//first函数是求中序下以p->rchild为根节点时，中序顺序下第一个节点。
+		//first函数是求中序下以p->rchild为根节点时，即当前结点在中序顺序下第一个节点。
 		return First(p->rchild);
 	}
 }
@@ -517,7 +517,7 @@ void postThread(TBTNode *p, TBTNode *&pre) {
 		postThread(p->rchild, pre);
 
 		if (p->lchild == NULL) {
-			p->lchild = pre;,
+			p->lchild = pre;
 			p->ltag = 1;
 		}
 
