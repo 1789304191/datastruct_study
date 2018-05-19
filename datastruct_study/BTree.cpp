@@ -230,6 +230,11 @@ void visit(BTNode * p) {
 	printf("%c\n", p->c);
 }
 
+void visit(TBTNode * p) {
+	//访问头节点
+	printf("%c\n", p->data);
+}
+
 //二叉树优化遍历的非递归实现(先序)
 void preOrderNonRecurision(BTNode * p) {
 	if (p != NULL) {
@@ -363,5 +368,165 @@ void postOrderNonRecurision(BTNode * bt) {
 			visit(stack2[top2--]);
 		}
 	}
+}
+
+//线索二叉树（中序）
+void InThread(TBTNode * p, TBTNode * &pre) {
+	if (p != NULL) {
+
+		//递归左子树线性化 此为中序，则按中序的顺序来判断左右子树是否为空，
+		//如果p的左子树为空则指向前驱pre。如果pre的右子树为空，则右子树的后继节点为p，然后pre=p; pre存在的意义是保留上一个节点，p为当前访问的节点
+		InThread(p->lchild, pre);
+
+		if (p->lchild == NULL) {
+			//建立当前结点的前驱线索
+			p->lchild = pre;
+			p->ltag = 1;
+		}
+
+		//如果前驱结点的后继线索为NULL
+		if (pre != NULL && pre->rchild == NULL) {
+			//建立前驱结点的后继线索
+			pre->rchild = p;
+			pre->rtag = 1;
+		}
+
+		//让前驱结点指向当前结点
+		pre = p;
+
+		//递归右子树线性化
+		InThread(p->rchild, pre);
+	}
+
+}
+
+//通过中序遍历建立中序线索二叉树
+void creatInThread(TBTNode * root) {
+
+	TBTNode *pre = NULL;
+
+	if (root != NULL) {
+
+		InThread(root, pre);
+
+		//处理最后一个节点 因为是中序遍历 p的后继为null
+		pre->rchild = NULL;
+		pre->rtag = 1;
+	}
+
+}
+
+//求中序下的第一个节点的算法（以p为根的中序线索二叉树）
+//算法原理是ltag如果为0则表示该节点有左子树
+TBTNode * First(TBTNode *p) {
+	while (p->ltag == 0) {
+		p = p->lchild;
+	}
+	return p;
+}
+
+//在中序线索二叉树中，节点p在中序下的后继节点
+TBTNode * Next(TBTNode *p) {
+	//如果rtag表示后继节点
+	if (p->rtag == 1) {
+		return p->rchild;
+	}
+	else {
+		//first函数是求中序下以p->rchild为根节点时，中序顺序下第一个节点。
+		return First(p->rchild);
+	}
+}
+
+//遍历中序线索二叉树
+void InOder(TBTNode * root) {
+	//first是求中序下第一个节点，next是求后继节点
+	for (TBTNode *p = First(root); p != NULL; p = Next(p)) {
+		visit(p);
+	}
+}
+
+
+//前序线索二叉树，因为是前序，所以访问节点放在最前面
+void preThread(TBTNode *p, TBTNode *&pre) {
+	if (p != NULL) {
+
+		//如果为空指针，就为线索
+		if (p->lchild == NULL) {
+			//前驱
+			p->lchild = pre;
+			p->ltag = 1;
+		}
+
+		if (pre!=NULL && pre->rchild == NULL) {
+			//后继
+			pre->rchild=p;
+			pre->rtag = 1;
+		}
+		
+		pre = p;
+
+		//左子树线索化 如果是指针才继续递归：原因如果左标识域为线索，那么p->lchild为前驱，而前驱已经线性化了
+		if (p->ltag == 0){
+			preThread(p->lchild, pre);
+		}
+		
+
+		//右子树线索化
+		if (p->rtag == 0) {
+			preThread(p->rchild, pre);
+		}
+
+	}
+
+}
+
+
+//前序线索二叉树的遍历
+void preOrder(TBTNode * root) {
+
+	if (root != NULL) {
+		
+		TBTNode *p = root;
+
+		while(p!=NULL){
+
+			//当左指针不是线索时则表示其左子树存在
+			while (p->ltag==0) {
+				visit(p);
+				p = p->lchild;
+			}
+			//此时p的左指针为线索且为前继 先访问p
+			visit(p);
+			//此时p一直指向其后继不论是否为线索rchild可表示线索，也可表示指针
+			p = p->rchild;
+
+		}
+	}
+
+}
+
+//后续线索二叉树
+void postThread(TBTNode *p, TBTNode *&pre) {
+
+	if (p != NULL) {
+
+		//左子树
+		postThread(p->lchild, pre);
+
+		//右子树
+		postThread(p->rchild, pre);
+
+		if (p->lchild == NULL) {
+			p->lchild = pre;,
+			p->ltag = 1;
+		}
+
+		if (pre != NULL && pre->rchild == NULL) {
+			pre->rchild = p;
+			pre->rtag =1;
+		}
 	
+		pre = p;
+	}
+
 }

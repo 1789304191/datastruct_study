@@ -46,6 +46,41 @@ int main() {
 	p9->lchild = NULL;
 	p9->rchild = NULL;
 
+
+	TBTNode * t1 = (TBTNode *)malloc(sizeof(TBTNode));
+	t1->data = 'A';
+	TBTNode * t2 = (TBTNode *)malloc(sizeof(TBTNode));
+	t2->data = 'B';
+	TBTNode * t3 = (TBTNode *)malloc(sizeof(TBTNode));
+	t3->data = 'C';
+	TBTNode * t4 = (TBTNode *)malloc(sizeof(TBTNode));
+	t4->data = 'D';
+	TBTNode * t5 = (TBTNode *)malloc(sizeof(TBTNode));
+	t5->data = 'E';
+	
+
+	t1->lchild = t2;
+	t1->ltag = 0;
+
+	t1->rchild = t5;
+	t1->rtag = 0;
+
+	t2->lchild = t3;
+	t2->ltag = 0;
+
+	t2->rchild = t4;
+	t2->rtag = 0;
+
+	t3->lchild = NULL;
+	t3->rchild = NULL;
+	
+	t4->lchild = NULL;
+	t4->rchild = NULL;
+
+	t5->lchild = NULL;
+	t5->rchild = NULL;
+	
+
 	//1.后序遍历
 	//printInt(comp(p1));
 
@@ -75,6 +110,19 @@ int main() {
 	//inOrderNonRecurision(p1);
 
 	//10.深度优化二叉树遍历，非递归实现，后续
-	postOrderNonRecurision(p1);
+	//postOrderNonRecurision(p1);
+
+	//11.线索二叉树
+	//creatInThread(t1);
+	//visit(First(t1));
+
+	//12.遍历线索二叉树通过first函数和next函数
+	//creatInThread(t1);
+	//InOder(t1);
+
+	//13.遍历先序线索二叉树
+	//TBTNode *pre = NULL;
+	//preThread(t1, pre);
+	//preOrder(t1);
 	return 0;
 }
