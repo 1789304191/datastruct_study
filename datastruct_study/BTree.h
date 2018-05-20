@@ -100,4 +100,8 @@ void preOrder(TBTNode * root);
 //后续线索二叉树
 void postThread(TBTNode *p, TBTNode *&pre);
 
+//通过先序和中序遍历确定一个二叉树的算法
+//参数描述：pre先序数组  in中序数组，L1，r1,L2,r2都是数组的下标范围
+BTNode * createBT(char pre[], char in[], int L1, int r1, int L2, int r2);
+
 #endif

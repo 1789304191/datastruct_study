@@ -530,3 +530,37 @@ void postThread(TBTNode *p, TBTNode *&pre) {
 	}
 
 }
+
+//通过先序和中序遍历确定一个二叉树的算法
+//参数描述：pre先序数组  in中序数组，L1，r1,L2,r2都是数组的下标范围
+//算法原理：先通过先序数组去中序数组找到对应的根节点，
+//然后可以将先序队列和中序队列分别分成左子树和右子树分别当成一颗二叉树去处理
+//从上至下，使父根节点和子根节点相连
+BTNode * createBT(char pre[], char in[], int L1, int r1, int L2, int r2) {
+	BTNode *s;
+
+	int i;
+
+	//相等时代表处理到了叶子节点
+	if (L1 > r1) {
+		return NULL;
+	}
+
+	s = (BTNode *)malloc(sizeof(BTNode));
+	s->lchild = s->rchild = NULL;
+
+	for (i = L2; i <= r2; i++) {
+		if (in[i] == pre[L1]) {
+			break;
+		}
+	}
+
+	s->c = in[i];
+
+	//左子数处理 其中L1和 L1 + i - L2是pre左子树的范围，L2和i是in的左子树的范围
+	s->lchild = createBT(pre, in, L1 + 1, L1 + i - L2, L2, i);
+
+	//右子树处理  L1 + i - L2+1和r1是pre右子树的范围，i+1和r2是in右子树的范围
+	s->rchild = createBT(pre, in, L1 + i - L2+1,r1, i+1, r2);
+
+}
