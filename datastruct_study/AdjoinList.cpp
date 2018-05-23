@@ -33,6 +33,10 @@ typedef struct
 	int numNodes, numEdges; /* 图中当前顶点数和边数 */
 }GraphAdjList;
 
+
+/*
+	GraphAdjList为数组保存每个顶点和边的关系
+*/
 void CreatGraph(GraphAdjList *g)
 {
 	int i, j, k;
@@ -46,6 +50,7 @@ void CreatGraph(GraphAdjList *g)
 		g->adjList[i].data = c;            //获取顶点值，
 		g->adjList[i].firstedge = NULL;    //将边表置为空
 	}
+
 	for (k = 0; k<g->numEdges; k++)
 	{
 		scanf("%d%d", &i, &j);               //输入i,j 在图中有i-->j
