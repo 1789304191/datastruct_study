@@ -31,6 +31,9 @@
     <Filter Include="源文件\chapter6">
       <UniqueIdentifier>{17f75c97-a869-488f-88b2-1a54ca715a1e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\chapter7">
+      <UniqueIdentifier>{eae371e6-32a1-47f1-82b8-719362969bd3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -55,6 +58,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="BTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="graph.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -136,6 +142,9 @@
     </ClCompile>
     <ClCompile Include="BTreeGoThrough.cpp">
       <Filter>源文件\chapter6</Filter>
+    </ClCompile>
+    <ClCompile Include="AdjoinList.cpp">
+      <Filter>源文件\chapter7</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
