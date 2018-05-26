@@ -41,7 +41,7 @@ void CreatGraph(GraphAdjList *g)
 {
 	int i, j, k;
 	EdgeNode *e;
-	scanf("%d%d", &g->numNodes, &g->numEdges);//获取顶点数和边数
+	scanf_s("%d%d", &g->numNodes, &g->numEdges);//获取顶点数和边数
 	char c;
 	//gettchar();
 	for (i = 0; i<g->numNodes; i++)
@@ -53,7 +53,7 @@ void CreatGraph(GraphAdjList *g)
 
 	for (k = 0; k<g->numEdges; k++)
 	{
-		scanf("%d%d", &i, &j);               //输入i,j 在图中有i-->j
+		scanf_s("%d%d", &i, &j);               //输入i,j 在图中有i-->j
 		e = (EdgeNode*)malloc(sizeof(EdgeNode));
 		e->adjvex = j;
 		e->next = g->adjList[i].firstedge;   //头插法建立边表
@@ -66,11 +66,11 @@ void CreatGraph(GraphAdjList *g)
 	}
 }
 
-int main()
-{
-	GraphAdjList G;
-	CreatGraph(&G);
-
-	return 0;
-}
+//int main()
+//{
+//	GraphAdjList G;
+//	CreatGraph(&G);
+//
+//	return 0;
+//}
 

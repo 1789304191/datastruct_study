@@ -11,4 +11,8 @@ void printStr(char *p);
 //输出数组
 void printArray(int n, int a[]);
 
+
+//输出字符
+void visit(char p);
+
 #endif

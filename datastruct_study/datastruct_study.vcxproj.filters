@@ -146,6 +146,12 @@
     <ClCompile Include="AdjoinList.cpp">
       <Filter>源文件\chapter7</Filter>
     </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>源文件\chapter7</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphGoThrough.cpp">
+      <Filter>源文件\chapter7</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="1_1.txt">

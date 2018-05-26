@@ -168,6 +168,8 @@
     <ClCompile Include="DoubleLinkedListCreate.cpp" />
     <ClCompile Include="ExampleOne.cpp" />
     <ClCompile Include="ExampleTwo.cpp" />
+    <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="GraphGoThrough.cpp" />
     <ClCompile Include="Kmp.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="MatrixCreateAndPrint.cpp" />
