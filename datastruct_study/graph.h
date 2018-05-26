@@ -4,6 +4,8 @@
 
 #define  MAXSIZE 30
 
+//*******邻接表*******************************//
+
 //边结构体
 typedef struct AcrNode {
 	//该边所指向的节点位置
@@ -39,6 +41,29 @@ typedef struct AGraph {
 
 }AGraph;
 
+//*******邻接矩阵*******************************//
+//顶点类型
+typedef struct VertexType {
+	//顶点编号
+	int no;
+	//顶点其他信息
+	char info;
+}VertexType;
+
+//图的定义
+typedef struct MGragh{
+
+	//edges[i][j]=1表示顶点i和顶点j邻接，=0表示不邻接 如果含有权值则将权值替换1
+	int edges[MAXSIZE][MAXSIZE];
+
+	//顶点数和边数
+	int n, e;
+
+	//存放节点信息
+	VertexType vex[MAXSIZE];
+
+}MGragh;
+
 //图的深度优先搜索遍历 v是起点编号 算法，任取一个节点访问，然后检查这个顶点的所有
 //临接顶点，递归访问其中未被访问过的顶点（连通图）
 void DFS(AGraph * G, int v);
@@ -64,5 +89,8 @@ int GisTree(AGraph * G);
 
 //判断顶点i和顶点j之间是否有路径
 int DFSTrave(AGraph * G, int i, int j);
+
+//图最小代价生成树，普里姆算法
+void Prim(MGragh g, int v0, int &sum);
 
 #endif

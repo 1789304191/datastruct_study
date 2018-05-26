@@ -236,3 +236,71 @@ int DFSTrave(AGraph * G, int i, int j) {
 	}
 
 }
+
+//图最小代价生成树，普里姆算法 g为图，v0表示某一顶点 求sum为最小生成树代价
+void Prim(MGragh g, int v0, int &sum) {
+	
+	//lowcost为存放当前生成树到剩余各顶点的最短边的权值
+	//如3顶点032构成的树，其到顶点1的权值最小为3，所以lowcost[1]=3
+	//vset[i]=1表示i顶点已经被并入到树中，=0表示没有
+	int lowcost[MAXSIZE], vset[MAXSIZE], v;
+
+	int i, j, k, min;
+
+	v = v0;
+
+	for (i = 0; i < g.n; i++) {
+		
+		//这一句是为了计算顶点v0生成树到各顶点的权值
+		lowcost[i] = g.edges[v0][i];
+
+		//节点还未并入树中
+		vset[i] = 0;
+	}
+
+	//将v0并入树中
+	vset[v0] = 1;
+
+	//sum清零用来累计数的权值
+	sum = 0;
+
+	for (i = 0; i < g.n - 1; i++) {
+
+		//MAXSIZE当做是一个比图中所有权值都大的常量
+		min = MAXSIZE;
+
+		//该循环用于选出候选边中的权值最小值
+		for (j = 0; j < g.n; j++) {
+			
+			//选出当前生成树到其余顶点最短边中最短的一条 并且还未并入到树中
+			if (vset[j] == 0 && lowcost[j] < min) {
+
+				//赋值最小值
+				min = lowcost[j];
+				
+				//k即为即将并入树中的顶点
+				k = j;
+			}
+		}
+
+		//将求出的最小值的顶点并入树中
+		vset[k] = 1;
+		v = k;
+
+		//这里用sum记录了最小生成树的权值
+		sum += min;
+
+		//下面这个循环以刚并入的顶点v为媒介更新候选边
+		for (j = 0; j < g.n; j++) {
+			
+			//寻找没有并入的顶点并且顶点j到新并入的顶点v的权值如果小于
+			//原来到v0的权值，那么就把顶点j到v的权值更新为j到这棵树的权值
+			if (vset[j] == 0 && g.edges[v][j] < lowcost[j]) {
+
+				//更新权值
+				lowcost[j] = g.edges[v][j];
+			}
+		}
+	}
+
+}

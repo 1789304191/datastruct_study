@@ -4,7 +4,7 @@
 
 int main() {
 
-	//图的创建
+	//邻接表的创建
 	AGraph *G = (AGraph *) malloc(sizeof(AGraph));
 
 	//边数
@@ -92,4 +92,63 @@ int main() {
 
 	//6.判断顶点i和j之间是否有路径
 	//printInt(DFSTrave(G, 0, 4));
+
+	//7.无向图的邻接矩阵的创建
+	MGragh * M = (MGragh *)malloc(sizeof(MGragh));
+	//顶点类型
+	VertexType * vex0 = (VertexType *)malloc(sizeof(VertexType));
+	VertexType * vex1 = (VertexType *)malloc(sizeof(VertexType));
+	VertexType * vex2 = (VertexType *)malloc(sizeof(VertexType));
+	VertexType * vex3 = (VertexType *)malloc(sizeof(VertexType));
+	VertexType * vex4 = (VertexType *)malloc(sizeof(VertexType));
+	vex0->no = 0;
+	vex1->no = 1;
+	vex2->no = 2;
+	vex3->no = 3;
+	vex4->no = 4;
+	//顶点信息
+	M->vex[0] = * vex0;
+	M->vex[1] = * vex1;
+	M->vex[2] = * vex2;
+	M->vex[3] = * vex3;
+	M->vex[4] = * vex4;
+	//边信息 假设顶点与顶点之前没有边则权值为100
+	M->edges[0][0] = 100;
+	M->edges[0][1] = 5;
+	M->edges[0][2] = 1;
+	M->edges[0][3] = 2;
+	M->edges[0][4] = 100;
+
+	M->edges[1][0] = 5;
+	M->edges[1][1] = 100;
+	M->edges[1][2] = 3;
+	M->edges[1][3] = 100;
+	M->edges[1][4] = 4;
+
+	M->edges[2][0] = 1;
+	M->edges[2][1] = 3;
+	M->edges[2][2] = 100;
+	M->edges[2][3] = 6;
+	M->edges[2][4] = 2;
+
+	M->edges[3][0] = 2;
+	M->edges[3][1] = 100;
+	M->edges[3][2] = 6;
+	M->edges[3][3] = 100;
+	M->edges[3][4] = 3;
+
+	M->edges[4][0] = 100;
+	M->edges[4][1] = 4;
+	M->edges[4][2] = 2;
+	M->edges[4][3] = 3;
+	M->edges[4][4] = 100;
+	
+	//5个顶点 8个边
+	M->n = 5;
+	M->e = 8;
+
+	//8.最小生成树代价，普里姆算法
+	int sum = 0;
+	Prim(*M, 0, sum);
+	printInt(sum);
 }
