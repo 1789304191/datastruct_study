@@ -62,4 +62,7 @@ void getNodeAndEdgeByDFS(AGraph * G, int v, int &vn, int &en);
 //判断一个无向图是否是一个树，无向图是一棵树的条件是：1.连通。2.边数为顶点-1
 int GisTree(AGraph * G);
 
+//判断顶点i和顶点j之间是否有路径
+int DFSTrave(AGraph * G, int i, int j);
+
 #endif

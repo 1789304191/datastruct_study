@@ -89,4 +89,7 @@ int main() {
 
 	//5.判读无向图是否是树
 	//printInt(GisTree(G));
+
+	//6.判断顶点i和j之间是否有路径
+	//printInt(DFSTrave(G, 0, 4));
 }

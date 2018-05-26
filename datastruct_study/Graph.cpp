@@ -221,3 +221,18 @@ int GisTree(AGraph * G) {
 		return 0;
 	}
 }
+
+//判断顶点i和顶点j之间是否有路径
+int DFSTrave(AGraph * G, int i, int j) {
+	
+	//进行深度优先搜索遍历，如果j被访问了，说明有路径
+	DFS(G, i);
+
+	if (visited[j] == 0) {
+		return 0;
+	}
+	else {
+		return 1;
+	}
+
+}
