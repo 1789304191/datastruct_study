@@ -503,3 +503,67 @@ void Dijkstra(MGragh g, int v,int dist[],int path[]) {
 	//path[]中存放了v点到其余各顶点的最短路径 算法复杂度为n的平方
 
 }
+
+
+//弗洛伊德算法，求图中任意两个顶点之间的最短路径
+void Floyd(MGragh g, int Path[][MAXSIZE]) {
+	
+	int i, j ,k;
+
+	int A[MAXSIZE][MAXSIZE];
+
+	//对数组A[][]和path[][]进行初始化
+	for (i = 0; i < g.n; i++) {
+		
+		for (j = 0; j < g.n; j++) {
+			
+			//初始化赋值权值
+			A[i][j] = g.edges[i][j];
+
+			Path[i][j] = -1;
+		}
+	}
+
+	//完成以k为中间点对所有的顶点对{i，j}进行检测和修改
+	for (k = 0; k < g.n; k++) {
+	
+		for (i = 0; i < g.n; i++) {
+		
+			for (j = 0; j < g.n; j++) {
+			
+				//如果以k为中间点的路径大于原来的路径的值，那么就修改为新路径的总权值
+				if (A[i][j] > A[i][k] + A[k][j]) {
+					
+					A[i][j] = A[i][k] + A[k][j];
+
+					//将两个顶点间最短路径要经过的中间点更新，经过了k之后可能会到下一个中间点
+					//知道中间点为-1才算到达
+					Path[i][j] = k;
+				}
+			}
+		}
+	}
+}
+
+//输出通过弗洛伊德算法得出的两点之间的最短路径（所经过的顶点序列）
+void printPath(int u, int v, int path[][MAXSIZE]) {
+	
+	//说明已经没有中间点
+	if (path[u][v] == -1) {
+		
+		printInt(v);
+	}
+	else {
+		
+		//中间点
+		int mid = path[u][v];
+
+		//处理mid前半段路径
+		printPath(u, mid, path);
+
+		//处理mid后半段路径
+		printPath(mid, v, path);
+	}
+
+
+}

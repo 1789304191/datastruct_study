@@ -96,3 +96,56 @@ MGragh * initDijkstra() {
 
 	return dijkstra;
 }
+
+
+//初始化弗洛伊德算法所使用的矩阵
+MGragh * initFloyd() {
+	
+	MGragh * Floyd = (MGragh *)malloc(sizeof(MGragh));
+	//顶点类型 4个顶点
+	VertexType * Dvex0 = (VertexType *)malloc(sizeof(VertexType));
+	VertexType * Dvex1 = (VertexType *)malloc(sizeof(VertexType));
+	VertexType * Dvex2 = (VertexType *)malloc(sizeof(VertexType));
+	VertexType * Dvex3 = (VertexType *)malloc(sizeof(VertexType));
+
+	Dvex0->no = 0;
+	Dvex1->no = 1;
+	Dvex2->no = 2;
+	Dvex3->no = 3;
+
+	//顶点信息
+	Floyd->vex[0] = *Dvex0;
+	Floyd->vex[1] = *Dvex1;
+	Floyd->vex[2] = *Dvex2;
+	Floyd->vex[3] = *Dvex3;
+
+	//边信息 假设顶点与顶点之前没有边则权值为100
+	Floyd->edges[0][0] = 100;
+	Floyd->edges[0][1] = 5;
+	Floyd->edges[0][2] = 100;
+	Floyd->edges[0][3] = 7;
+	
+
+	Floyd->edges[1][0] = 100;
+	Floyd->edges[1][1] = 100;
+	Floyd->edges[1][2] = 4;
+	Floyd->edges[1][3] = 2;
+	
+
+	Floyd->edges[2][0] = 3;
+	Floyd->edges[2][1] = 3;
+	Floyd->edges[2][2] = 100;
+	Floyd->edges[2][3] = 2;
+	
+
+	Floyd->edges[3][0] = 100;
+	Floyd->edges[3][1] = 100;
+	Floyd->edges[3][2] = 1;
+	Floyd->edges[3][3] = 100;
+
+	//5个顶点 8个边
+	Floyd->n = 4;
+	Floyd->e = 8;
+
+	return Floyd;
+}

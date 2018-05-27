@@ -118,4 +118,10 @@ void printfPath(int path[], int a);
 //迪杰斯特拉算法 求某一个顶点到其余顶点的最短路径
 void Dijkstra(MGragh g, int v,int dist[],int path[]);
 
+//弗洛伊德算法，求图中任意两个顶点之间的最短路径
+void Floyd(MGragh g, int path[][MAXSIZE]);
+
+//输出通过弗洛伊德算法得出的两点之间的最短路径
+void printPath(int u, int v, int path[][MAXSIZE]);
+
 #endif
