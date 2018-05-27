@@ -1,6 +1,7 @@
 #include <iostream>
 #include "graph.h"
 #include "print.h"
+#include "MGraph.h"
 
 int main() {
 
@@ -201,6 +202,16 @@ int main() {
 	//printInt(sum);
 
 	//11.path[]数组，即树的双亲存储方式，从根节点到叶子节点的路径的输出
-	int path[] = { -1,0,1,0,5,2,4 };
-	printfPath(path, 6);
+	//int path[] = { -1,0,1,0,5,2,4 };
+	//printfPath(path, 6);
+
+	//12.迪杰斯特拉算法，求某一顶点到其余顶点的最短路径
+	//距离0的最短路径
+	int dist[MAXSIZE];  
+	//最短路径的上一个顶点（即父节点）遍历可以得到从根节点到该顶点的路径
+	int path[MAXSIZE];
+	Dijkstra(*(initDijkstra()), 0, dist, path);
+	printArray(7, dist);
+	printf("\n");
+	printArray(7, path);
 }

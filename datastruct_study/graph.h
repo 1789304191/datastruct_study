@@ -112,7 +112,10 @@ int getRoot(int a);
 //克鲁斯卡尔算法中所用到的边根据权值排序法 road为边，e为边的条数
 void sortEdges(Road * road[], int E);
 
-//双亲节点存储结构的逆向输出
+//双亲节点存储结构的逆向输出 a为某一个叶子节点
 void printfPath(int path[], int a);
+
+//迪杰斯特拉算法 求某一个顶点到其余顶点的最短路径
+void Dijkstra(MGragh g, int v,int dist[],int path[]);
 
 #endif

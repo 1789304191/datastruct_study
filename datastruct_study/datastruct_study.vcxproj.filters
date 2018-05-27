@@ -63,6 +63,9 @@
     <ClInclude Include="graph.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="MGraph.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1_0.cpp">
@@ -150,6 +153,9 @@
       <Filter>源文件\chapter7</Filter>
     </ClCompile>
     <ClCompile Include="GraphGoThrough.cpp">
+      <Filter>源文件\chapter7</Filter>
+    </ClCompile>
+    <ClCompile Include="MGraph.cpp">
       <Filter>源文件\chapter7</Filter>
     </ClCompile>
   </ItemGroup>
