@@ -304,3 +304,102 @@ void Prim(MGragh g, int v0, int &sum) {
 	}
 
 }
+
+Road road[MAXSIZE];
+
+//定义并查集数组
+int v[MAXSIZE];
+
+//在并查集中查找根节点的函数
+int getRoot(int a) {
+
+	//在查找过程中a会不断变化，直到a=v[a]时，才是根节点
+	/*
+		0 0			0
+		1 0		1	2	3
+		2 0			4
+		3 0
+		4 2
+	*/
+	while (a != v[a]) {
+		a = v[a];
+	}
+	return a;
+}
+
+
+//普里姆算法中所用到的边根据权值排序法 road为边，e为边的条数
+void sortEdges(Road * road[], int E) {
+
+	Road *p = (Road *)malloc(sizeof(Road));
+
+	for (int i = 0; i < E; i++) {
+		for (int j = 0; j < E-i-1; j++) {
+			if (road[j]->w > road[j+1]->w) {
+
+				p->a = road[j + 1]->a;
+				p->b = road[j + 1]->b;
+				p->w = road[j + 1]->w;
+
+				road[j + 1]->a = road[j]->a;
+				road[j + 1]->b = road[j]->b;
+				road[j + 1]->w = road[j]->w;
+
+				road[j]->a = p->a;
+				road[j]->b = p->b;
+				road[j]->w = p->w;
+			}
+		}
+	}
+	
+}
+
+//图的最小代价生成树，克鲁斯卡尔算法 road为边 sum为权值 g为邻接矩阵
+void Kruskal(MGragh g, int &sum, Road * road[]) {
+	
+	int i;
+
+	int N, E, a, b;
+
+	//n为顶点数
+	N = g.n;
+
+	//e为边数
+	E = g.e;
+
+	sum = 0;
+
+	for (i = 0; i < N; i++) {
+		//数的双亲节点表示法 v[i]=i表示i顶点的双亲等于自己
+		v[i] = i;
+	}
+
+	//边按权值大小排序
+	sortEdges(road,E);
+
+	//循环边数取权值最小的边，判断边的两顶点是否有共同的双亲节点
+	//如果有那么就会形成回路，则跳过本次循环
+	for (i = 0; i < E; i++) {
+
+		printf("边：%d-->%d,w=%d\n", road[i]->a, road[i]->b, road[i]->w);
+		
+		//a顶点的双亲节点
+		a = getRoot(road[i]->a);
+
+		//b顶点的双亲节点
+		b = getRoot(road[i]->b);
+
+		printf("根节点：%d，%d,w=%d\n", a, b, road[i]->w);
+
+		//如果不是同一个根节点则ab边并入之后a节点的双亲节点为b
+		if (a != b) {
+
+			//a节点的双亲为v[b]
+			v[a] = b;
+
+			//计算权值
+			sum += road[i]->w;
+		}
+	}
+
+}

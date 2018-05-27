@@ -3,7 +3,7 @@
 
 //输出整数
 void printInt(int a) {
-	printf("\n结果为：%d\n", a);
+	printf("结果为：%d,", a);
 }
 
 //输出字符串

@@ -148,7 +148,55 @@ int main() {
 	M->e = 8;
 
 	//8.最小生成树代价，普里姆算法
+	//int sum = 0;
+	//Prim(*M, 0, sum);
+	//printInt(sum);
+
+	//9.边根据权值排序
+	Road * road1 = (Road *)malloc(sizeof(Road));
+	Road * road2 = (Road *)malloc(sizeof(Road));
+	Road * road3 = (Road *)malloc(sizeof(Road));
+	Road * road4 = (Road *)malloc(sizeof(Road));
+	Road * road5 = (Road *)malloc(sizeof(Road));
+	Road * road6 = (Road *)malloc(sizeof(Road));
+	Road * road7 = (Road *)malloc(sizeof(Road));
+	Road * road8 = (Road *)malloc(sizeof(Road));
+	road1->a = 2;
+	road1->b = 0;
+	road1->w = 1;
+	
+	road2->a = 3;
+	road2->b = 0;
+	road2->w = 2;
+
+	road3->a = 4;
+	road3->b = 3;
+	road3->w = 3;
+
+	road4->a = 1;
+	road4->b = 4;
+	road4->w = 4;
+
+	road5->a = 0;
+	road5->b = 1;
+	road5->w = 5;
+
+	road6->a = 4;
+	road6->b = 2;
+	road6->w = 2;
+
+	road7->a = 1;
+	road7->b = 2;
+	road7->w = 3;
+
+	road8->a = 2;
+	road8->b = 3;
+	road8->w = 6;
+	Road * road[8] = { road1,road2,road3,road4,road5,road6,road7,road8 };
+	//sortEdges(road, 8);
+	
+	//10.卡鲁斯卡尔算法
 	int sum = 0;
-	Prim(*M, 0, sum);
+	Kruskal(*M, sum, road);
 	printInt(sum);
 }

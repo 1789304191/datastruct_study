@@ -64,6 +64,16 @@ typedef struct MGragh{
 
 }MGragh;
 
+typedef struct Road{
+
+	//a和b为一条边所连的两个顶点
+	int a, b;
+
+	//边的权值
+	int w;
+
+}Road;
+
 //图的深度优先搜索遍历 v是起点编号 算法，任取一个节点访问，然后检查这个顶点的所有
 //临接顶点，递归访问其中未被访问过的顶点（连通图）
 void DFS(AGraph * G, int v);
@@ -92,5 +102,14 @@ int DFSTrave(AGraph * G, int i, int j);
 
 //图最小代价生成树，普里姆算法
 void Prim(MGragh g, int v0, int &sum);
+
+//图的最小代价生成树，克鲁斯卡尔算法 road为边 sum为权值 g为邻接矩阵
+void Kruskal(MGragh g, int &sum, Road * road[]);
+
+//在数组的双亲表示法中查找根节点的函数
+int getRoot(int a);
+
+//普里姆算法中所用到的边根据权值排序法 road为边，e为边的条数
+void sortEdges(Road * road[], int E);
 
 #endif
