@@ -109,7 +109,10 @@ void Kruskal(MGragh g, int &sum, Road * road[]);
 //在数组的双亲表示法中查找根节点的函数
 int getRoot(int a);
 
-//普里姆算法中所用到的边根据权值排序法 road为边，e为边的条数
+//克鲁斯卡尔算法中所用到的边根据权值排序法 road为边，e为边的条数
 void sortEdges(Road * road[], int E);
+
+//双亲节点存储结构的逆向输出
+void printfPath(int path[], int a);
 
 #endif

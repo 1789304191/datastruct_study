@@ -328,7 +328,7 @@ int getRoot(int a) {
 }
 
 
-//普里姆算法中所用到的边根据权值排序法 road为边，e为边的条数
+//克鲁斯卡尔算法中所用到的边根据权值排序法 road为边，e为边的条数
 void sortEdges(Road * road[], int E) {
 
 	Road *p = (Road *)malloc(sizeof(Road));
@@ -394,7 +394,7 @@ void Kruskal(MGragh g, int &sum, Road * road[]) {
 		//如果不是同一个根节点则ab边并入之后a节点的双亲节点为b
 		if (a != b) {
 
-			//a节点的双亲为v[b]
+			//a节点的双亲为b
 			v[a] = b;
 
 			//计算权值
@@ -402,4 +402,29 @@ void Kruskal(MGragh g, int &sum, Road * road[]) {
 		}
 	}
 
+}
+
+//双亲节点存储结构的逆向输出(输出某一元素从根节点到该节点的路径)
+void printfPath(int path[], int a) {
+	
+	//栈的初始化
+	int stack[MAXSIZE], top = -1;
+
+	//以叶子节点到根节点的顺序入栈 如果没有到根节点就继续循环
+	while (path[a] != -1) {
+		
+		//入栈操作
+		stack[++top] = a;
+		a = path[a];
+	}
+
+	//最后根节点入栈
+	stack[++top] = a;
+
+	//top=-1时表示栈空
+	while (top != -1) {
+		
+		//出栈
+		printf("%d-->", stack[top--]);
+	}
 }

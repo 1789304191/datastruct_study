@@ -196,7 +196,11 @@ int main() {
 	//sortEdges(road, 8);
 	
 	//10.卡鲁斯卡尔算法
-	int sum = 0;
-	Kruskal(*M, sum, road);
-	printInt(sum);
+	//int sum = 0;
+	//Kruskal(*M, sum, road);
+	//printInt(sum);
+
+	//11.path[]数组，即树的双亲存储方式，从根节点到叶子节点的路径的输出
+	int path[] = { -1,0,1,0,5,2,4 };
+	printfPath(path, 6);
 }
