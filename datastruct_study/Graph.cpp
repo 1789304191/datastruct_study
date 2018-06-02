@@ -460,6 +460,11 @@ void Dijkstra(MGragh g, int v,int dist[],int path[]) {
 			path[i] = -1;
 		}
 	}
+	
+	//起始点初始化
+	set[v] = 1;
+	path[v] = -1;
+
 	//初始化结束
 
 	//从剩余顶点中选出一个顶点，通过这个顶点的路径在通往所有剩余
@@ -565,5 +570,72 @@ void printPath(int u, int v, int path[][MAXSIZE]) {
 		printPath(mid, v, path);
 	}
 
+
+}
+
+//拓扑排序核心算法
+int TopSort(AGraph *G) {
+	
+	int i, j, n = 0;
+
+	//定义栈
+	int stack[MAXSIZE], top = -1;
+
+	AcrNode *p;
+
+	//循环将图中入度为0的顶点入栈
+	for (i = 0; i < G->n; i++) {
+		
+		if (G->adjList[i].count == 0) {
+
+			stack[++top] = i;
+		}
+	}
+
+	while (top != -1) {
+		
+		//出栈
+		i = stack[top--];
+
+		//计数器，计算已输出顶点的个数
+		++n;
+
+		//输出当前顶点
+		printInt(i);
+
+		//指向第一条边
+		p = G->adjList[i].firstAcr;
+
+		//将所有由此顶点所指向的顶点的入度都减少1，并将这个过程中入度变为0的顶点入栈
+		while (p != NULL) {
+			
+			//记录该顶点
+			j = p->adjvex;
+
+			//该顶点入度减1
+			--(G->adjList[j].count);
+
+			//如果入度为0则入栈
+			if (G->adjList[j].count == 0) {
+			
+				stack[++top] = j;
+			}
+
+			//下一条边
+			p = p->nextArc;
+		
+		}
+
+	}
+
+	if (n == G->n) {
+
+		//拓扑排序成功
+		return 1;
+	}
+	else {
+		
+		return 0;
+	}
 
 }

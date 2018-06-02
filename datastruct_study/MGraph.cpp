@@ -149,3 +149,72 @@ MGragh * initFloyd() {
 
 	return Floyd;
 }
+
+
+//初始化拓扑排序所需的邻接表
+AGraph * initTopSort() {
+	
+	AGraph * g = (AGraph *)malloc(sizeof(AGraph));
+
+	g->n = 5;
+
+	g->e = 6;
+
+	//第一个节点
+	VNode * v1 = (VNode *)malloc(sizeof(VNode));
+	v1->data = 'A';
+	v1->count = 0;
+	
+	AcrNode * a1 = (AcrNode *)malloc(sizeof(AcrNode));
+	AcrNode * a2 = (AcrNode *)malloc(sizeof(AcrNode));
+	AcrNode * a3 = (AcrNode *)malloc(sizeof(AcrNode));
+
+	a1->adjvex = 1;
+	a2->adjvex = 2;
+	a3->adjvex = 3;
+
+	v1->firstAcr = a1;
+	a1->nextArc = a2;
+	a2->nextArc = a3;
+	a3->nextArc = NULL;
+
+	//第二个节点
+	VNode * v2 = (VNode *)malloc(sizeof(VNode));
+	v2->data = 'B';
+	v2->count = 1;
+	AcrNode * va2 = (AcrNode *)malloc(sizeof(AcrNode));
+	va2->adjvex = 5;
+	va2->nextArc = NULL;
+	v2->firstAcr = va2;
+
+	//第三个节点
+	VNode * v3 = (VNode *)malloc(sizeof(VNode));
+	v3->data = 'C';
+	v3->count = 1;
+	AcrNode * va3 = (AcrNode *)malloc(sizeof(AcrNode));
+	va3->adjvex = 5;
+	va3->nextArc = NULL;
+	v3->firstAcr = va3;
+
+	//第四个节点
+	VNode * v4 = (VNode *)malloc(sizeof(VNode));
+	v4->data = 'D';
+	v4->count = 1;
+	AcrNode * va4 = (AcrNode *)malloc(sizeof(AcrNode));
+	va4->adjvex = 5;
+	va4->nextArc = NULL;
+	v4->firstAcr = va4;
+
+	//第五个节点
+	VNode * v5 = (VNode *)malloc(sizeof(VNode));
+	v5->data = 'E';
+	v5->count = 3;
+	v5->firstAcr = NULL;
+
+	g->adjList[0] = *v1;
+	g->adjList[1] = *v2;
+	g->adjList[2] = *v3;
+	g->adjList[3] = *v4;
+	g->adjList[4] = *v5;
+	return g;
+}

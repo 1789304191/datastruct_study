@@ -28,6 +28,9 @@ typedef struct VNode
 	//指向第一条边
 	AcrNode * firstAcr;
 
+	//此句新增部分，count用来统计顶点的入度
+	int count;
+
 }VNode;
 
 //图的邻接表类型
@@ -123,5 +126,8 @@ void Floyd(MGragh g, int path[][MAXSIZE]);
 
 //输出通过弗洛伊德算法得出的两点之间的最短路径
 void printPath(int u, int v, int path[][MAXSIZE]);
+
+//拓扑排序核心算法
+int TopSort(AGraph *G);
 
 #endif

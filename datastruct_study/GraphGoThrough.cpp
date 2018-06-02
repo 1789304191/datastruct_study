@@ -216,8 +216,11 @@ int main() {
 	//printArray(7, path);
 
 	//13.弗洛伊德算法求任意两点之间的路径和利用递归输出路径
-	int path[MAXSIZE][MAXSIZE];
-	Floyd(*initFloyd(), path);
+	//int path[MAXSIZE][MAXSIZE];
+	//Floyd(*initFloyd(), path);
 	//得到path数组（两点之间路径的中间点）输出路径
-	printPath(1, 0, path);
+	//printPath(1, 0, path);
+
+	//14.拓扑排序核心算法
+	printInt(TopSort(initTopSort()));
 }

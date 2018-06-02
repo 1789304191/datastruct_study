@@ -12,5 +12,7 @@ MGragh * initDijkstra();
 //初始化弗洛伊德算法所使用的矩阵
 MGragh * initFloyd();
 
+//初始化拓扑排序所需的邻接表
+AGraph * initTopSort();
 
 #endif
