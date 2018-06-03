@@ -4,6 +4,8 @@
 
 int visited[MAXSIZE];
 
+int sum;
+
 //图的遍历 v是起点编号 算法，任取一个节点访问，然后检查这个顶点的所有
 //临接顶点，递归访问其中未被访问过的顶点（连通图）
 void DFS(AGraph * G, int v) {
@@ -701,4 +703,61 @@ int BFS(AGraph *G, int vi, int vj) {
 	}
 	
 	return 0;
+}
+
+
+//在有向图G中，如果r到G中的每个节点都有路径可达，则称节点r为G的根节点。
+//可以通过深度优先遍历的方法，以r为起点进行深度优先遍历，若函数结束
+//所有顶点都被访问，则r为根，如果要打印出所有根节点，可以对图中的每个顶点都调用一次dfs
+void DFSForRoot(AGraph *G, int v) {
+
+	AcrNode *p;
+
+	visited[v] = 1;
+
+	++sum;
+
+	p = G->adjList[v].firstAcr;
+
+	while (p != NULL) {
+		
+		//遍历adjlist中下一个数组元素，如果最后为null，则继续遍历下一个元素
+		if (visited[p->adjvex] == 0) {
+			
+			DFSForRoot(G, p->adjvex);
+		}
+		
+		//指向链表的下一个节点
+		p = p->nextArc;
+	
+	}
+
+}
+
+//打印根节点
+void print(AGraph *G) {
+	
+	int i, j;
+
+	for (i = 0; i < G->n; i++) {
+		
+		sum = 0;
+
+		//初始化
+		for (j = 0; j < G->n; j++) {
+		
+			visited[j] = 0;
+		}
+
+		//通过i顶点遍历
+		DFSForRoot(G, i);
+
+		if (sum == G->n) {
+			
+			//打印根节点
+			printInt(i);
+		}
+	
+	}
+
 }

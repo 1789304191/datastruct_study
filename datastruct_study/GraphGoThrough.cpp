@@ -225,5 +225,8 @@ int main() {
 	//TopSort(initTopSort());
 
 	//15.通过BFS,宽度优先遍历算法判断两个顶点之间是否有路径
-	printInt(BFS(initTopSort(), 4, 1));
+	//printInt(BFS(initTopSort(), 4, 1));
+
+	//16.通过DFS判断一个顶点是否是根节点，并打印所有根节点
+	print(initTopSort());
 } 
