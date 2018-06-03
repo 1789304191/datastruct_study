@@ -639,3 +639,66 @@ int TopSort(AGraph *G) {
 	}
 
 }
+
+//判断邻接表方式存储的有向图是否存在由顶点vi到顶点vj的路径（使用广度优先遍历方法）
+int BFS(AGraph *G, int vi, int vj) {
+	
+	AcrNode *p;
+
+	//队列初始化
+	int que[MAXSIZE], front = 0, rear = 0;
+
+	int visit[MAXSIZE];
+
+	int i, j;
+
+	for (i = 0; i < G->n; i++) {
+		
+		//默认都没访问
+		visit[i] = 0;
+	}
+
+	//入队
+	rear = (rear + 1) % MAXSIZE;
+
+	que[rear] = vi;
+
+	//已访问
+	visit[vi] = 1;
+
+	//当队列不为空
+	while (front != rear) {
+		
+		//出队
+		front = (front + 1) % MAXSIZE;
+	
+		j = que[front];
+
+		if (j == vj) {
+			
+			return 1;
+		}
+
+		//指向当前顶点的第一条边
+		p = G->adjList[j].firstAcr;
+
+		while (p != NULL) {
+			
+			if (visit[p->adjvex] == 0) {
+			
+				//入队
+				rear = (rear + 1) % MAXSIZE;
+
+				//将该顶点入队
+				que[rear] = p->adjvex;
+
+				visit[p->adjvex] = 1;
+			}
+
+			p = p->nextArc;
+		
+		}
+	}
+	
+	return 0;
+}

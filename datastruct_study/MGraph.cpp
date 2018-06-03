@@ -183,7 +183,7 @@ AGraph * initTopSort() {
 	v2->data = 'B';
 	v2->count = 1;
 	AcrNode * va2 = (AcrNode *)malloc(sizeof(AcrNode));
-	va2->adjvex = 5;
+	va2->adjvex = 4;
 	va2->nextArc = NULL;
 	v2->firstAcr = va2;
 
@@ -192,7 +192,7 @@ AGraph * initTopSort() {
 	v3->data = 'C';
 	v3->count = 1;
 	AcrNode * va3 = (AcrNode *)malloc(sizeof(AcrNode));
-	va3->adjvex = 5;
+	va3->adjvex = 4;
 	va3->nextArc = NULL;
 	v3->firstAcr = va3;
 
@@ -201,7 +201,7 @@ AGraph * initTopSort() {
 	v4->data = 'D';
 	v4->count = 1;
 	AcrNode * va4 = (AcrNode *)malloc(sizeof(AcrNode));
-	va4->adjvex = 5;
+	va4->adjvex = 4;
 	va4->nextArc = NULL;
 	v4->firstAcr = va4;
 

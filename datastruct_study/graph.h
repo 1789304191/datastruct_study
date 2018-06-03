@@ -130,4 +130,7 @@ void printPath(int u, int v, int path[][MAXSIZE]);
 //拓扑排序核心算法
 int TopSort(AGraph *G);
 
+//判断邻接表方式存储的有向图是否存在由顶点vi到顶点vj的路径（使用广度优先遍历方法）
+int BFS(AGraph *G, int vi, int vj);
+
 #endif

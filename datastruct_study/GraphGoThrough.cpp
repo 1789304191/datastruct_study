@@ -222,5 +222,8 @@ int main() {
 	//printPath(1, 0, path);
 
 	//14.拓扑排序核心算法
-	printInt(TopSort(initTopSort()));
-}
+	//TopSort(initTopSort());
+
+	//15.通过BFS,宽度优先遍历算法判断两个顶点之间是否有路径
+	printInt(BFS(initTopSort(), 4, 1));
+} 
