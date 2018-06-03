@@ -34,6 +34,9 @@
     <Filter Include="源文件\chapter7">
       <UniqueIdentifier>{eae371e6-32a1-47f1-82b8-719362969bd3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\chapter8">
+      <UniqueIdentifier>{146b0376-e3f7-4552-a423-897e2586b51d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -64,6 +67,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="MGraph.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sort.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -157,6 +163,12 @@
     </ClCompile>
     <ClCompile Include="MGraph.cpp">
       <Filter>源文件\chapter7</Filter>
+    </ClCompile>
+    <ClCompile Include="sort.cpp">
+      <Filter>源文件\chapter8</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>源文件\chapter8</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
