@@ -13,6 +13,16 @@ int main() {
 	//printArray(8, array);
 
 	//3.选择排序法
-	selectSort(array, 8);
+	//selectSort(array, 8);
+
+	//4.建立初始堆
+	//for (int i = 3; i >= 0; --i) {
+	//	sift(array, i, 8);
+	//}
+	//printArray(8,array);
+
+	//5.堆排序
+	heapSort(array, 8);
+	printArray(8,array);
 
 }
