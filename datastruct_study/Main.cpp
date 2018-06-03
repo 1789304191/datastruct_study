@@ -9,7 +9,10 @@ int main() {
 	//insetSort(array, 8);
 
 	//2.快速排序
-	quickSort(array, 0, 7);
-	printArray(8, array);
+	//quickSort(array, 0, 7);
+	//printArray(8, array);
+
+	//3.选择排序法
+	selectSort(array, 8);
 
 }

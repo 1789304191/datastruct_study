@@ -9,5 +9,8 @@ void insetSort(int R[], int n);
 //¿ìËÙÅÅĞò
 void quickSort(int R[], int low, int high);
 
+//Ñ¡ÔñÅÅĞò
+void selectSort(int R[], int n);
+
 
 #endif
