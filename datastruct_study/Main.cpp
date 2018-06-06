@@ -22,7 +22,11 @@ int main() {
 	//printArray(8,array);
 
 	//5.堆排序
-	heapSort(array, 8);
-	printArray(8,array);
+	//heapSort(array, 8);
+	//printArray(8,array);
 
+	//6.利用快速排序原则将数组正数和负数归类
+	//int R[8] = { 49,-38,-65,-97,-76,13,27,49 };
+	//ReSort(R, 8);
+	//printArray(8, R);
 }
