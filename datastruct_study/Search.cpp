@@ -132,3 +132,43 @@ void CreateBST(BTNode *&bt, int key[], int n) {
 
 
 }
+
+//假设INF为已定义的常量，它小于树中的任何值
+int predt = -1;
+
+//判断给定的二叉树是否是二叉排序树，原理对给定的二叉树进行中序遍历
+//如果能保证前一个值不比后一个值大，则说明该二叉树是一颗二叉排序树
+int judBST(BTNode *bt) {
+
+	int b1, b2;
+
+	if (bt == NULL) {
+		
+		//空树是二叉排序树
+		return 1;
+	}
+	else {
+	
+		//递归判断左子树是否是二叉排序树 先从左子树的最后一位访问
+		b1 = judBST(bt->lchild);
+
+		//左子树不是二叉排序树或者前一个值predit大于后一个值则不是二叉排序树
+		if (b1 == 0 || predt > bt->key) {
+			
+			return 0;
+		}
+
+		//将要访问右子树的根的时候，predt记录下当前节点的根的值
+		predt = bt->key;
+
+		//中间整个过程可以看作是visit访问
+
+		//递归判断右子树是否为二叉排序树
+		b2 = judBST(bt->rchild);
+
+		return b2;
+	
+	}
+
+
+}

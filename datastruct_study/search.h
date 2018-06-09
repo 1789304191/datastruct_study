@@ -42,4 +42,8 @@ int BSTInsert(BTNode *&bt, int key);
 //二叉排序树的构造
 void CreateBST(BTNode *&bt, int key[], int n);
 
+//判断给定的二叉树是否是二叉排序树，原理对给定的二叉树进行中序遍历
+//如果能保证前一个值不比后一个值大，则说明该二叉树是一颗二叉排序树
+int judBST(BTNode *bt);
+
 #endif
