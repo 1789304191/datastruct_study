@@ -37,6 +37,9 @@
     <Filter Include="源文件\chapter8">
       <UniqueIdentifier>{146b0376-e3f7-4552-a423-897e2586b51d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\chapter9">
+      <UniqueIdentifier>{40153318-a599-4b23-b5a8-6471e133b675}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -70,6 +73,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="sort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="search.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -169,6 +175,12 @@
     </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>源文件\chapter8</Filter>
+    </ClCompile>
+    <ClCompile Include="Search.cpp">
+      <Filter>源文件\chapter9</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchMain.cpp">
+      <Filter>源文件\chapter9</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
