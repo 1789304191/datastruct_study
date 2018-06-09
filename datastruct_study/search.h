@@ -36,4 +36,7 @@ int Bsearch(int R[], int low, int high, int k);
 //二叉排序树的基本算法
 BTNode * BSTSearch(BTNode * bt, int key);
 
+//二叉排序树的插入关键字的算法
+int BSTInsert(BTNode *&bt, int key);
+
 #endif

@@ -11,6 +11,9 @@ int main() {
 	//printInt(Bsearch(array, 0, 4, 3));
 
 	//2.二叉排序树
-	printInt(BSTSearch(initBTNode(), 3)->key);
+	//printInt(BSTSearch(initBTNode(), 3)->key);
 
+	//3.二叉排序树的插入算法
+	//BTNode * bt = initBTNode();
+	//printInt(BSTInsert(bt, 6));
 }

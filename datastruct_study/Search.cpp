@@ -77,3 +77,41 @@ BTNode * BSTSearch(BTNode * bt, int key) {
 
 
 }
+
+
+//二叉排序树的插入关键字的算法
+int BSTInsert(BTNode *&bt, int key) {
+	
+	//当前为空指针说明找到插入位置(空指针)，创建新节点进行插入
+	if (bt == NULL) {
+	
+		BTNode * bt = (BTNode *)malloc(sizeof(BTNode));
+
+		bt->lchild = bt->rchild = NULL;
+
+		bt->key = key;
+
+		return 1;
+	
+	}
+	else {
+		
+		//关键字已存在
+		if (key == bt->key) {
+			
+			return 0;
+		}
+		else if (key < bt->key) {
+		
+			//左子树寻找插入位置
+			return BSTInsert(bt->lchild, key);
+		}
+		else {
+		
+			//右子树寻找插入位置
+			return BSTInsert(bt->lchild, key);
+		}
+	
+	}
+
+}
