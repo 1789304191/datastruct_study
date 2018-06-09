@@ -152,11 +152,14 @@ int judBST(BTNode *bt) {
 		//递归判断左子树是否是二叉排序树 先从左子树的最后一位访问
 		b1 = judBST(bt->lchild);
 
+		
 		//左子树不是二叉排序树或者前一个值predit大于后一个值则不是二叉排序树
-		if (b1 == 0 || predt > bt->key) {
+		if (b1 == -2 || predt > bt->key) {
 			
-			return 0;
+			return -2;
 		}
+
+		printf("%d,", bt->key);
 
 		//将要访问右子树的根的时候，predt记录下当前节点的根的值
 		predt = bt->key;
@@ -165,6 +168,8 @@ int judBST(BTNode *bt) {
 
 		//递归判断右子树是否为二叉排序树
 		b2 = judBST(bt->rchild);
+
+
 
 		return b2;
 	

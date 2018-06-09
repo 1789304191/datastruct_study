@@ -18,7 +18,10 @@ int main() {
 	//printInt(BSTInsert(bt, 6));
 
 	//4.二叉树的构造
-	BTNode * bt = NULL;
-	CreateBST(bt, array, 6);
+	//BTNode * bt = NULL;
+	//CreateBST(bt, array, 6);
+
+	//5.判断一个二叉树是否是二叉排序树
+	printInt(judBST(initBTNode()));
 
 }
