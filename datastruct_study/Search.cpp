@@ -85,7 +85,7 @@ int BSTInsert(BTNode *&bt, int key) {
 	//当前为空指针说明找到插入位置(空指针)，创建新节点进行插入
 	if (bt == NULL) {
 	
-		BTNode * bt = (BTNode *)malloc(sizeof(BTNode));
+		bt = (BTNode *)malloc(sizeof(BTNode));
 
 		bt->lchild = bt->rchild = NULL;
 
@@ -109,9 +109,26 @@ int BSTInsert(BTNode *&bt, int key) {
 		else {
 		
 			//右子树寻找插入位置
-			return BSTInsert(bt->lchild, key);
+			return BSTInsert(bt->rchild, key);
 		}
 	
 	}
+
+}
+
+//二叉排序树的构造
+//二叉排序树构造只需要建一颗空树，然后将关键字逐个插入到空树中即可构造
+//一颗二叉排序树
+void CreateBST(BTNode *&bt, int key[], int n) {
+	
+	int i;
+
+	bt = NULL;
+
+	for (i = 0; i < n; i++) {
+	
+		BSTInsert(bt, key[i]);
+	}
+
 
 }

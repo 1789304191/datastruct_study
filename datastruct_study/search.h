@@ -39,4 +39,7 @@ BTNode * BSTSearch(BTNode * bt, int key);
 //二叉排序树的插入关键字的算法
 int BSTInsert(BTNode *&bt, int key);
 
+//二叉排序树的构造
+void CreateBST(BTNode *&bt, int key[], int n);
+
 #endif

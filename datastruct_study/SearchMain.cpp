@@ -5,7 +5,7 @@
 
 int main() {
 	
-	int array[5] = { 1,2,3,4,5 };
+	int array[6] = { 2,1,0,3,4,5 };
 
 	//1.折半查找法
 	//printInt(Bsearch(array, 0, 4, 3));
@@ -16,4 +16,9 @@ int main() {
 	//3.二叉排序树的插入算法
 	//BTNode * bt = initBTNode();
 	//printInt(BSTInsert(bt, 6));
+
+	//4.二叉树的构造
+	BTNode * bt = NULL;
+	CreateBST(bt, array, 6);
+
 }
