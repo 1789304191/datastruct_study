@@ -78,6 +78,9 @@
     <ClInclude Include="search.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="SearchTestCase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1_0.cpp">
@@ -180,6 +183,9 @@
       <Filter>源文件\chapter9</Filter>
     </ClCompile>
     <ClCompile Include="SearchMain.cpp">
+      <Filter>源文件\chapter9</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchTestCase.cpp">
       <Filter>源文件\chapter9</Filter>
     </ClCompile>
   </ItemGroup>

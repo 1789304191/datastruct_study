@@ -152,6 +152,7 @@
     <ClInclude Include="MGraph.h" />
     <ClInclude Include="print.h" />
     <ClInclude Include="search.h" />
+    <ClInclude Include="SearchTestCase.h" />
     <ClInclude Include="sort.h" />
     <ClInclude Include="StackAndQueue.h" />
     <ClInclude Include="stdafx.h" />
@@ -182,6 +183,7 @@
     <ClCompile Include="print.cpp" />
     <ClCompile Include="Search.cpp" />
     <ClCompile Include="SearchMain.cpp" />
+    <ClCompile Include="SearchTestCase.cpp" />
     <ClCompile Include="sort.cpp" />
     <ClCompile Include="StackTestFour.cpp" />
     <ClCompile Include="StackTestOne.cpp" />
