@@ -40,6 +40,9 @@
     <Filter Include="源文件\chapter9">
       <UniqueIdentifier>{40153318-a599-4b23-b5a8-6471e133b675}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\chapter10">
+      <UniqueIdentifier>{ead0351e-7f44-4121-8309-e36c559aa0ff}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -79,6 +82,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="SearchTestCase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="divide.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -187,6 +193,12 @@
     </ClCompile>
     <ClCompile Include="SearchTestCase.cpp">
       <Filter>源文件\chapter9</Filter>
+    </ClCompile>
+    <ClCompile Include="divide.cpp">
+      <Filter>源文件\chapter10</Filter>
+    </ClCompile>
+    <ClCompile Include="DivideMain.cpp">
+      <Filter>源文件\chapter10</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

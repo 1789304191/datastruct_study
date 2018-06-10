@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BTree.h" />
+    <ClInclude Include="divide.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="MGraph.h" />
     <ClInclude Include="print.h" />
@@ -169,6 +170,8 @@
     <ClCompile Include="BTree.cpp" />
     <ClCompile Include="BTreeGoThrough.cpp" />
     <ClCompile Include="Common.cpp" />
+    <ClCompile Include="divide.cpp" />
+    <ClCompile Include="DivideMain.cpp" />
     <ClCompile Include="DoubleLinkedListCreate.cpp" />
     <ClCompile Include="ExampleOne.cpp" />
     <ClCompile Include="ExampleTwo.cpp" />
