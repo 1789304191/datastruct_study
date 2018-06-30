@@ -2,6 +2,8 @@
 
 #define _SEARCH_H_
 
+#define  MAXSIZE 30
+
 //分块查找，索引表定义
 typedef struct indexElem{
 
@@ -56,6 +58,16 @@ typedef struct BTNodeWithCount {
 
 } BTNodeWithCount;
 
+//待认定的查找序列结构体定义
+typedef struct Sequence{
+	
+	//查找序列数据存储数组
+	int elem[MAXSIZE];
+	
+	//序列实际数据个数
+	int len;
+}Sequence;
+
 //顺序查找法
 int search(int a[], int n, int k);
 
@@ -82,5 +94,16 @@ LBTNode * searchByKey(LBTNode * t, int k);
 //向二叉排序树中插入一个节点，如果该节点的在树中已经存在，则树中结点相同节点的count+1,
 //否则将其插入
 int insertBTNodeWithCount(BTNodeWithCount *&p, int key);
+
+//判断给定的关键字值序列是否是二叉排序树的查找序列
+//将序列s压缩并分解为s1和s2
+void reduce(Sequence &s, Sequence &s1, Sequence &s2);
+
+//判断是是否单调递增，s2是否单调递增，s2是否单调递减，且s1的元素值不必x大
+//s2的元素值不比x小
+int judge(Sequence &s1, Sequence &s2, int x);
+
+//判断s是否是查找序列
+int isSearch(Sequence &s,Sequence &s1, Sequence &s2, int x);
 
 #endif

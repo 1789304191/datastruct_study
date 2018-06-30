@@ -250,3 +250,74 @@ int  insertBTNodeWithCount(BTNodeWithCount * &bt, int key) {
 
 
 }
+
+//判断给定的关键字值序列是否是二叉排序树的查找序列
+//将序列s压缩并分解为s1和s2
+void reduce(Sequence &s, Sequence &s1, Sequence &s2) {
+	
+	int i=0, j = 0, k = 0;
+
+	do {
+		
+		//{20,30,90,80,40,50,70,60}
+		while (i + 1 < s.len&&s.elem[i] < s.elem[i + 1]) {
+			
+			s1.elem[j++] = s.elem[i++];
+		}
+
+		while (i + 1 < s.len&&s.elem[i] > s.elem[i + 1]) {
+		
+			s2.elem[k++] = s.elem[i++];
+		}
+
+		//最终s1={20,30,40,50} s1={90,80,70}
+	
+	} while (i + 1 < s.len);
+
+	s1.len = j;
+	s2.len = k;
+
+}
+
+//判断是是否单调递增，s2是否单调递增，s2是否单调递减，且s1的元素值不必x大
+//s2的元素值不比x小
+int judge(Sequence &s1, Sequence &s2, int x) {
+
+	int i, flag;
+	flag = 1;
+	i = 0;
+
+	while (flag&&i + 1 < s1.len) {
+		
+		if (s1.elem[i] > s1.elem[i + 1] || s1.elem[i] > x) {
+			
+			flag = 0;
+		}
+		else {
+			++i;
+		}
+	
+	}
+
+	i = 0;
+	while (flag&&i + 1 < s2.len) {
+		
+		if (s2.elem[i] < s2.elem[i + 1] || s2.elem[i] < x) {
+			flag = 0;
+		}
+		else {
+			++i;
+		}
+	}
+
+	return flag;
+
+}
+
+int isSearch(Sequence &s, Sequence &s1, Sequence &s2, int x) {
+	
+	reduce(s, s1, s2);
+
+	return judge(s1, s2, x);
+
+}

@@ -31,6 +31,21 @@ int main() {
 
 	//7.在二叉排序树中插入一个节点，如果已存在相同关键字结点
 	//那么count域的值加1
-	BTNodeWithCount * bt = initBTNodeWithCount();
-	printInt(insertBTNodeWithCount(bt, 5));
+	//BTNodeWithCount * bt = initBTNodeWithCount();
+	//printInt(insertBTNodeWithCount(bt, 5));
+
+	//8.判断是否是二叉排序树的查找序列
+	Sequence * s = (Sequence *)malloc(sizeof(Sequence));
+	Sequence * s1 = (Sequence *)malloc(sizeof(Sequence));
+	Sequence * s2 = (Sequence *)malloc(sizeof(Sequence));
+	s->elem[0] = 20;
+	s->elem[1] = 30;
+	s->elem[2] = 90;
+	s->elem[3] = 80;
+	s->elem[4] = 40;
+	s->elem[5] = 50;
+	s->elem[6] = 70;
+	s->elem[7] = 60;
+	s->len = 8;
+	printInt(isSearch(*s, *s1, *s2, 60));
 }
