@@ -177,3 +177,76 @@ int judBST(BTNode *bt) {
 
 
 }
+
+//在平衡二叉树的每个节点增设一个域lsize,存储已该节点为根的左子树的个数加1，编写一个算法，求
+//树中第k个节点的位置 (该查找建立在中序序列的情况下)
+LBTNode * searchByKey(LBTNode * t, int k) {
+
+	if (t == NULL || k < 1) {
+		return NULL;
+	}
+
+	if (t->lsize == k) {
+	
+		return t;
+	}
+
+	if (k > t->lsize) {
+		
+		//右孩子节点的顺序号等于根节点顺序号与右孩子lsize的域的值之和
+		return searchByKey(t->rchild, k - t->lsize);
+	}
+
+	if (k < t->lsize) {
+		
+		return searchByKey(t->lchild, k);
+	}
+
+}
+
+
+//向二叉排序树中插入一个节点，如果该节点的在树中已经存在，则树中结点相同节点的count+1,
+//否则将其插入
+int  insertBTNodeWithCount(BTNodeWithCount * &bt, int key) {
+	
+	//当前为空指针时说明找到插入位置，创建新节点进行插入
+	if (bt == NULL) {
+		
+		bt = (BTNodeWithCount *)malloc(sizeof(BTNode));
+
+		bt->lchild = bt->rchild = NULL;
+
+		bt->key = key;
+
+		//与该节点相同的统计量初始化为1
+		bt->count = 1;
+
+		return 1;
+	}
+	else {
+		
+		//关键字已存在
+		if (bt->key == key) {
+			
+			bt->count++;
+
+			return 0;
+
+		}
+		else if(bt->key<key) {
+			
+			//插入左子树
+			return insertBTNodeWithCount(bt->lchild, key);
+		
+		}
+		else {
+		
+			//插入右子树
+			return insertBTNodeWithCount(bt->rchild, key);
+		}
+	
+	
+	}
+
+
+}

@@ -27,6 +27,35 @@ typedef struct BTNode {
 
 } BTNode;
 
+//二叉排序树
+typedef struct LBTNode {
+
+	//关键字
+	int key;
+
+	//新增加的lsize域
+	int lsize;
+
+	struct LBTNode * lchild;
+
+	struct LBTNode * rchild;
+
+} LBTNode;
+
+typedef struct BTNodeWithCount {
+
+	//关键字
+	int key;
+
+	//相同关键字的个数
+	int count;
+
+	struct BTNodeWithCount * lchild;
+
+	struct BTNodeWithCount * rchild;
+
+} BTNodeWithCount;
+
 //顺序查找法
 int search(int a[], int n, int k);
 
@@ -45,5 +74,13 @@ void CreateBST(BTNode *&bt, int key[], int n);
 //判断给定的二叉树是否是二叉排序树，原理对给定的二叉树进行中序遍历
 //如果能保证前一个值不比后一个值大，则说明该二叉树是一颗二叉排序树
 int judBST(BTNode *bt);
+
+//在平衡二叉树的每个节点增设一个域lsize,存储已该节点为根的左子树的个数加1，编写一个算法，求
+//树中第k个节点的位置
+LBTNode * searchByKey(LBTNode * t, int k);
+
+//向二叉排序树中插入一个节点，如果该节点的在树中已经存在，则树中结点相同节点的count+1,
+//否则将其插入
+int insertBTNodeWithCount(BTNodeWithCount *&p, int key);
 
 #endif

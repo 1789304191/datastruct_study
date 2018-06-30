@@ -38,3 +38,69 @@ BTNode * initBTNode() {
 	
 	return bt2;
 }
+
+
+//初始化一个带lsize值域的平衡二叉树
+LBTNode * initLBTNode() {
+
+	LBTNode * A = (LBTNode *)malloc(sizeof(LBTNode));
+	LBTNode * B = (LBTNode *)malloc(sizeof(LBTNode));
+	LBTNode * C = (LBTNode *)malloc(sizeof(LBTNode));
+	LBTNode * D = (LBTNode *)malloc(sizeof(LBTNode));
+
+	A->key = 1;
+	A->lchild = NULL;
+	A->rchild = NULL;
+	A->lsize = 1;
+
+	D->key = 4;
+	D->lchild = NULL;
+	D->rchild = NULL;
+	D->lsize = 1;
+
+	C->key = 3;
+	C->lchild = NULL;
+	C->rchild = D;
+	C->lsize = 1;
+
+	B->key = 2;
+	B->lchild = A;
+	B->rchild = C;
+	B->lsize = 2;
+
+	return B;
+
+}
+
+
+//初始化一个带统计相同关键字值节点个数的count
+BTNodeWithCount * initBTNodeWithCount() {
+
+	BTNodeWithCount * A = (BTNodeWithCount *)malloc(sizeof(BTNodeWithCount));
+	BTNodeWithCount * B = (BTNodeWithCount *)malloc(sizeof(BTNodeWithCount));
+	BTNodeWithCount * C = (BTNodeWithCount *)malloc(sizeof(BTNodeWithCount));
+	BTNodeWithCount * D = (BTNodeWithCount *)malloc(sizeof(BTNodeWithCount));
+
+	A->key = 1;
+	A->lchild = NULL;
+	A->rchild = NULL;
+	A->count= 1;
+
+	D->key = 4;
+	D->lchild = NULL;
+	D->rchild = NULL;
+	D->count = 1;
+
+	C->key = 3;
+	C->lchild = NULL;
+	C->rchild = D;
+	C->count = 1;
+
+	B->key = 2;
+	B->lchild = A;
+	B->rchild = C;
+	B->count = 1;
+
+	return B;
+
+}

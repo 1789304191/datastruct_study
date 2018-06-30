@@ -3,7 +3,7 @@
 #include "print.h"
 #include "SearchTestCase.h"
 
-//int main() {
+int main() {
 //	
 //	int array[6] = { 2,1,0,3,4,5 };
 //
@@ -24,4 +24,13 @@
 //	//5.判断一个二叉树是否是二叉排序树
 //	printInt(judBST(initBTNode()));
 //
-//}
+	//6.在平衡二叉树中每个节点添加一个lleft的值域，
+	//存储已该节点为根的左子树的个数加1，求第k个节点的位置
+	//LBTNode * lbt = initLBTNode();
+	//printInt(searchByKey(lbt, 4)->key); 
+
+	//7.在二叉排序树中插入一个节点，如果已存在相同关键字结点
+	//那么count域的值加1
+	BTNodeWithCount * bt = initBTNodeWithCount();
+	printInt(insertBTNodeWithCount(bt, 5));
+}

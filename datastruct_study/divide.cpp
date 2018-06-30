@@ -26,7 +26,7 @@ void print(int a[], int L, int R) {
 //假设存在一个函数divid()，可以将a[L.....R]分成两部分，元素a[L]为分界线
 //小于a[L]的元素在左边，大于a[L]的在右边
 int divid(int a[], int L, int R) {
-	
+	return 0;
 }
 
 
