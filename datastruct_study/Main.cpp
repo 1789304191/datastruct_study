@@ -2,7 +2,7 @@
 #include "sort.h"
 #include "print.h"
 
-//int main() {
+int main() {
 //	int array[8] = { 49,38,65,97,76,13,27,49 };
 //
 //	//1.直接插入排序
@@ -29,4 +29,20 @@
 //	//int R[8] = { 49,-38,-65,-97,-76,13,27,49 };
 //	//ReSort(R, 8);
 //	//printArray(8, R);
-//}
+
+	//7，计数算法
+	//int a[8] = { 49,38,65,97,76,13,27,50 };
+	//int b[8];
+	//countSort(a, b, 8, 8);
+	//printArray(8,b);
+
+	//8,冒泡算法
+	/*int a[8] = { 49,38,65,97,76,13,27,50 };
+	bubbleSort(a, 8);
+	printArray(8, a);*/
+
+	//9,双向冒泡法
+	int a[8] = { 49,38,65,97,76,13,27};
+	bubbleSortTwoSide(a, 7);
+	printArray(7, a);
+}

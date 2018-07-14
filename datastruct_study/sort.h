@@ -26,4 +26,13 @@ void heapSort(int R[], int n);
 //将数组里所有取值为负的关键字放在所有取非负值的关键字之前(类似于快速排序)
 void ReSort(int R[], int n);
 
+//计数算法page262
+void countSort(int a[], int b[],int al,int bl);
+
+//冒泡排序
+void bubbleSort(int a[], int al);
+
+//双向冒泡算法
+void bubbleSortTwoSide(int a[], int al);
+
 #endif

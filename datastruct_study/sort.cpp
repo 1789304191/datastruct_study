@@ -134,12 +134,14 @@ void sift(int R[], int i, int high) {
 	for (int k = i * 2 + 1; k<high; k = k * 2 + 1) {
 
 		//如果左子结点小于右子结点，k指向右子结点
+		//K+1表示右子树，需要判断右子树是否超出数组范围
 		if (k + 1<high && R[k]<R[k + 1]) {
 			k++;
 		}
 
 		//如果子节点大于父节点，将子节点值赋给父节点（不用进行交换）
 		if (R[k] >temp) {
+			//赋值给父节点
 			R[i] = R[k];
 			i = k;
 		}
@@ -208,10 +210,98 @@ void ReSort(int R[], int n) {
 
 		//当前R[i]的值为正数，当前R[j]<0 交换之后，从i的下一位开始判断
 		//从j的前一位来判断，当i=j时结束
-		R[i++] = R[j];
+		R[i++] = R[j]; 
 
 		R[j--] = temp;
 	
 	}
 
 }
+
+//计数算法page262
+void countSort(int a[], int b[],int al,int bl) {
+	
+	for (int i = 0; i < al; i++) {
+		
+		int count = 0;
+
+		for (int j = 0; j < al; j++) {
+			
+			if(a[i] > a[j] && a[i] != a[j]){
+				
+				count++;
+			}
+		
+		}
+
+		//如果比a小的右count个，就存在b的count位置
+		b[count] = a[i];
+	}
+
+}
+
+//冒泡排序
+void bubbleSort(int a[], int al) {
+	
+	//控制没趟次数
+	for (int i = al-1; i >=0; i--) {
+
+		for (int j = 0; j < i; j++) {
+
+			if (a[j] > a[j + 1]) {
+				
+				int temp = a[j + 1];
+				a[j+1] = a[j];
+				a[j] = temp;
+			}
+			
+		}
+	
+	}
+
+}
+
+//双向冒泡算法
+void bubbleSortTwoSide(int a[], int al) {
+	//控制每趟次数
+	for (int i = al - 1; i >= 0; i--) {
+		
+		
+
+		//正向
+		for (int j = 0; j < i; j++) {
+
+			if (a[j] > a[j + 1]) {
+
+				int temp = a[j + 1];
+				a[j + 1] = a[j];
+				a[j] = temp;
+			}
+
+		}
+		
+		//反向
+		for (int j = i; j >=1; j--) {
+
+			if (a[j] < a[j-1]) {
+
+				int temp = a[j - 1];
+				a[j-1] = a[j];
+				a[j] = temp;
+			}
+
+		}
+
+		if (i == al / 2) {
+
+			break;
+		}
+			
+	}
+
+		
+
+}
+
+
+

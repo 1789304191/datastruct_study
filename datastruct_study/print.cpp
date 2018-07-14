@@ -16,4 +16,6 @@ void printArray(int n, int a[]) {
 	for (int i = 0; i < n; i++) {
 		printf("%d,",a[i]);
 	}
+
+	printf("\n");
 }
