@@ -42,7 +42,15 @@ int main() {
 	printArray(8, a);*/
 
 	//9,双向冒泡法
-	int a[8] = { 49,38,65,97,76,13,27};
-	bubbleSortTwoSide(a, 7);
-	printArray(7, a);
+	//int a[8] = { 49,38,65,97,76,13,27};
+	//bubbleSortTwoSide(a, 7);
+	//printArray(7, a);
+
+	//10.链表的直接插入法
+	int a[8] = { 49,38,65,97,76,13,27 };
+	OrderLink * q = (OrderLink *)malloc(sizeof(OrderLink));
+	q->num = NULL;
+	q->next = NULL;
+	linkDirectInsert(a, 7, q);
+	return 0;
 }

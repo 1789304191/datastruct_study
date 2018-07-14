@@ -2,6 +2,14 @@
 
 #define _SORT_H_
 
+typedef struct OrderLink {
+
+	int num;
+
+	OrderLink * next;
+
+}OrderLink;
+
 //插入排序 原理每趟将一个待排序的关键字按照其值的大小插入到
 //已经排好的部分有序序列的适当位置上
 void insetSort(int R[], int n);
@@ -34,5 +42,8 @@ void bubbleSort(int a[], int al);
 
 //双向冒泡算法
 void bubbleSortTwoSide(int a[], int al);
+
+//链表的直接插入法
+void linkDirectInsert(int array[],int n, OrderLink *&orderLink);
 
 #endif

@@ -303,5 +303,76 @@ void bubbleSortTwoSide(int a[], int al) {
 
 }
 
+//链表的直接插入法
+void linkDirectInsert(int array[], int n, OrderLink * &orderLink) {
+	
+	
+
+	for (int i = 0; i < n; i++) {
+
+		OrderLink * p = orderLink->next;
+	
+		//头节点后插入
+		if (p == NULL) {
+		
+			OrderLink * q = (OrderLink *)malloc(sizeof(OrderLink));
+
+			q->num = array[i];
+
+			orderLink->next = q;
+
+			q->next = NULL;
+
+			continue;
+		}
+
+		//保存上一个节点
+		OrderLink * temp = orderLink;
+
+		while (p!= NULL) {
+			
+			//中间插入
+			if (array[i]<p->num) {
+				
+				OrderLink * q = (OrderLink *)malloc(sizeof(OrderLink));
+
+					q->num = array[i];
+
+					q->next = p;
+
+					temp->next = q;
+
+					break;
+
+			}
+
+			
+			//如果最大，则插入到最后
+			if (p->next == NULL) {
+
+				OrderLink * q = (OrderLink *)malloc(sizeof(OrderLink));
+
+				q->num = array[i];
+
+				p->next = q;
+
+				q->next = NULL;
+
+				break;
+
+			}
+
+			temp = p;
+
+			p = p->next;
+		}
+
+		
+
+	}
+
+
+}
+
 
 
