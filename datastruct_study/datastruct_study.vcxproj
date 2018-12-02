@@ -206,6 +206,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="1_1.txt" />
+    <Text Include="2015年判断题.txt" />
     <Text Include="完全二叉树.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
