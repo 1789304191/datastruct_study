@@ -8,6 +8,8 @@
 
 #define LENS sizeof(struct Student)
 
+#define NodeLENS sizeof(struct Node)
+
 
 //单链表结构体
 
@@ -20,6 +22,11 @@ typedef struct Student {
 	struct Student * next;
 
 }Student;
+
+typedef struct Node {
+	int data;
+	struct Node *next;
+}Node,*List;
 
 //双链表结构体
 
@@ -70,5 +77,8 @@ void insertionSortByAscWithHead(Student * head);
 
 //带头节点单链表去重
 void distinct(Student * a, Student * b);
+
+//删除值域小于1的所有节点
+void delneg(Node *node);
 
 #endif

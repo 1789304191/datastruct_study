@@ -141,4 +141,10 @@ void DFSForRoot(AGraph *G, int v);
 //打印根节点
 void print(AGraph *G);
 
+//图的邻接表转换为邻接矩阵
+MGragh * AGraphToMgraph(AGraph *G);
+
+//自定义栈完成图的深度优先遍历
+void DFS1(AGraph *g, int v);
+
 #endif

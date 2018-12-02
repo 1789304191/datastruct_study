@@ -16,3 +16,19 @@
 //	print_(p1);
 //	return 0;
 //}
+
+//int main() {
+//
+//	//带头节点
+//	struct Node * head,* p1,* p2;
+//	head = (struct Node *)malloc(NodeLENS);
+//	p1 = (struct Node *)malloc(NodeLENS);
+//	p1->data = 1;
+//	p2 = (struct Node *)malloc(NodeLENS);
+//	p2->data = 2;
+//	p1->next = p2;
+//	p2->next = NULL;
+//	head->data = NULL;
+//	head->next = p1;
+//	return 0;
+//}

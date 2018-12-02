@@ -2,8 +2,9 @@
 #include "StackAndQueue.h"
 
 //int main() {
-//	int a = 1;
-//	SqStack st;
+//	/*int a = 1;
+//	sqstack st;
 //	init(st);
-//	printf("%d", push(st, 0, a));
+//	printf("%d", push(st, 0, a));*/
+//	printf("11111");
 //}

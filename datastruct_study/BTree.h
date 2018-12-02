@@ -26,6 +26,7 @@ typedef struct St {
 
 } St;
 
+
 //线索二叉树的定义
 typedef struct TBTNode {
 	char data;
@@ -37,6 +38,8 @@ typedef struct TBTNode {
 	struct TBTNode * lchild;
 	struct TBTNode * rchild;
 }TBTNode;
+
+
 
 //后续遍历运算
 int comp(BTNode * p);

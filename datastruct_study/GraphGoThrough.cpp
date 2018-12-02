@@ -23,15 +23,15 @@
 //
 //	//图的边
 //	AcrNode * a1 = (AcrNode *)malloc(sizeof(AcrNode));
-//	AcrNode * a2 = (AcrNode *)malloc(sizeof(AcrNode));;
-//	AcrNode * a3 = (AcrNode *)malloc(sizeof(AcrNode));;
-//	AcrNode * b1 = (AcrNode *)malloc(sizeof(AcrNode));;
-//	AcrNode * c1 = (AcrNode *)malloc(sizeof(AcrNode));;
-//	AcrNode * c2 = (AcrNode *)malloc(sizeof(AcrNode));;
-//	AcrNode * d1 = (AcrNode *)malloc(sizeof(AcrNode));;
-//	AcrNode * d2 = (AcrNode *)malloc(sizeof(AcrNode));;
-//	AcrNode * d3 = (AcrNode *)malloc(sizeof(AcrNode));;
-//	AcrNode * e1 = (AcrNode *)malloc(sizeof(AcrNode));;
+//	AcrNode * a2 = (AcrNode *)malloc(sizeof(AcrNode));
+//	AcrNode * a3 = (AcrNode *)malloc(sizeof(AcrNode));
+//	AcrNode * b1 = (AcrNode *)malloc(sizeof(AcrNode));
+//	AcrNode * c1 = (AcrNode *)malloc(sizeof(AcrNode));
+//	AcrNode * c2 = (AcrNode *)malloc(sizeof(AcrNode));
+//	AcrNode * d1 = (AcrNode *)malloc(sizeof(AcrNode));
+//	AcrNode * d2 = (AcrNode *)malloc(sizeof(AcrNode));
+//	AcrNode * d3 = (AcrNode *)malloc(sizeof(AcrNode));
+//	AcrNode * e1 = (AcrNode *)malloc(sizeof(AcrNode));
 //	
 //	//边所指向的节点的位置
 //	//顶点A的边
@@ -75,10 +75,10 @@
 //	//DFS(G, 0);
 //
 //	//2.广度优先遍历图
-//	//int visit[MAXSIZE] = { 0,0,0,0,0,0,0 };
-//	//int v1[MAXSIZE]; 数组不初始默认不会为0
-//	//printInt(v1[1]);
-//	//BFS(G, 0, visit);
+//	int visit[MAXSIZE] = { 0,0,0,0,0,0,0 };
+//	int v1[MAXSIZE]; //数组不初始默认不会为0
+//	printInt(v1[1]);
+//	BFS(G, 0, visit);
 //
 //	//3.求连通图离某一个顶点最远路径的顶点序号
 //	//printInt(BFS(G, 4));

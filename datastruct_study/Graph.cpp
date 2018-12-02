@@ -25,6 +25,7 @@ void DFS(AGraph * G, int v) {
 	while (p != NULL) {
 		
 		//如果该条边的顶点的序号没有被访问过，则递归访问
+		printf("当前访问节点：%d \n", p->adjvex);
 		if (visited[p->adjvex] == 0) {
 
 			DFS(G, p->adjvex);
@@ -759,5 +760,87 @@ void print(AGraph *G) {
 		}
 	
 	}
+
+}
+
+
+MGragh * AGraphToMgraph(AGraph *G) {
+
+	MGragh * m = (MGragh *)malloc(sizeof(MGragh));
+
+	m->n = G->n;
+
+	m->e = G->e;
+	
+	for (int i = 0; i < G->n; i++) {
+		
+		m->vex[i].no = G->adjList[i].data;
+	
+	}
+
+	for (int i = 0; i < G->n; i++) {
+
+		AcrNode * p= G->adjList[i].firstAcr;
+
+		while (p != NULL) {
+			
+			m->edges[i][p->adjvex] = 1;
+
+			p = p->nextArc;
+		
+		}
+
+		return m;
+
+	}
+
+
+}
+
+
+//自定义栈完成图的深度优先遍历
+void DFS1(AGraph *g, int v) {
+
+	AcrNode *p;
+
+	//定义一个栈来记录访问过程中的顶点
+	int stack[MAXSIZE], top = -1;
+
+	int i, k;
+
+	int visit[MAXSIZE];
+
+	for (i = 0; i < g->n; i++) {
+		visit[i] = 0;
+	}
+
+	printInt(v);
+
+	stack[++top] = v;//起始点入站
+
+	while (top != -1) {
+		
+		//栈顶取值
+		k = stack[top];
+
+		//p指向该顶点的第一条边
+		p = g->adjList[k].firstAcr;
+
+		while (p != NULL && visit[p->adjvex] == 1) {
+			p = p->nextArc;
+		}
+
+		//如果p达到当前链表尾部，则说明当前顶点的所有点都访问完毕，当前顶点出栈
+		if (p == NULL) {
+			--top;
+		}
+		else {
+			printInt(p->adjvex);
+			visit[p->adjvex] = 1;
+			stack[++top] = p->adjvex;
+		}
+	
+	}
+
 
 }

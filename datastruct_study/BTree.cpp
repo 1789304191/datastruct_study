@@ -31,6 +31,7 @@ int getDepth(BTNode * p) {
 
 		int RD = getDepth(p->rchild);
 
+		//每次返回上层都加一
 		return (LD > RD ? LD : RD) + 1;
 	}
 	

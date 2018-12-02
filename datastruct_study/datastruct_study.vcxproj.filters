@@ -87,6 +87,9 @@
     <ClInclude Include="divide.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="childsiblings.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1_0.cpp">
@@ -199,6 +202,12 @@
     </ClCompile>
     <ClCompile Include="DivideMain.cpp">
       <Filter>源文件\chapter10</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>源文件\chapter6</Filter>
+    </ClCompile>
+    <ClCompile Include="testImpl.cpp">
+      <Filter>源文件\chapter6</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

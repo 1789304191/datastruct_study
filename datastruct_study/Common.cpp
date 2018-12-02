@@ -277,3 +277,9 @@ void distinct(Student * a, Student * b) {
 
 
 }
+
+
+void delneg(Node *node) {
+	
+
+}
